@@ -32,9 +32,15 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">教师名称：</label>
+                            <label class="col-sm-3 control-label">点击数：</label>
                             <div class="col-sm-8">
-                                <select class="form-control" name="trainCorseId">
+                                <input id="clickCount" name="clickCount" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">教师id：</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="teacherId">
                                     <option th:each="teacher:${teachers}" th:value="${teacher.id}"
                                             th:text="${teacher.username }"></option>
                                 </select>
@@ -62,7 +68,10 @@
                             <label class="col-sm-3 control-label">图片地址：</label>
                             <div class="col-sm-8">
                                 <input id="url" name="url" class="form-control" type="text">
-                                <div type="button" id="test1">
+                                <!--<button type="button" class="layui-btn" id="imageUrl">
+                                    <i class="fa fa-cloud"></i>上传文件
+                                </button>-->
+                                <div type="button" id="imageUrl">
                                 </div>
                             </div>
                         </div>
@@ -70,7 +79,7 @@
                             <label class="col-sm-3 control-label">视频地址：</label>
                             <div class="col-sm-8">
                                 <input id="videoUrl" name="videoUrl" class="form-control" type="text">
-                                <div type="button" id="test2">
+                                <div type="button" id="video_url">
                                 </div>
                             </div>
                         </div>
@@ -88,22 +97,14 @@
 <div th:include="include::footer"></div>
 <script type="text/javascript" src="/js/appjs/system/course/add.js">
 </script>
-<!-- 全局js -->
-<script src="/js/jquery.min.js?v=2.1.4"></script>
-<script src="/js/bootstrap.min.js?v=3.3.6"></script>
-<script src="/js/bootstrap-paginator.min.js"></script>
-
-<script src="/js/content.js?v=1.0.0"></script>
 <script src="/js/layui.js"></script>
-<script src="/js/plugins/clipboard/clipboard.min.js"></script>
 <script src="/js/plugins/layer/layer.min.js"></script>
-<script src="/js/vue.min.js"></script>
 <script type="text/javascript">
     layui.use('upload', function () {
         var upload = layui.upload;
         //执行实例
         var uploadInst = upload.render({
-            elem: '#test1', //绑定元素
+            elem: '#imageUrl', //绑定元素
             url: '/common/sysFile/upload', //上传接口
             size: 1000,
             accept: 'file',
@@ -115,11 +116,12 @@
             }
         });
     });
+
     layui.use('upload', function () {
         var upload = layui.upload;
         //执行实例
         var uploadInst = upload.render({
-            elem: '#test2', //绑定元素
+            elem: '#video_url', //绑定元素
             url: '/common/sysFile/upload', //上传接口
             size: 1000,
             accept: 'file',
@@ -132,11 +134,6 @@
         });
     });
 
-    // function changeType(i) {
-    //     app.type = i;
-    //     app.offset = 0;
-    //     app.getData();
-    // }
 </script>
 </body>
 </html>
