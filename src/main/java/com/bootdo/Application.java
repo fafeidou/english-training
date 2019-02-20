@@ -16,9 +16,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan("com.bootdo.*.dao")
 @SpringBootApplication
 @EnableCaching
-public class BootdoApplication {
+public class Application {
     public static void main(String[] args) {
-        SpringApplication.run(BootdoApplication.class, args);
+        SpringApplication.run(Application.class, args);
         System.out.println("ヾ(◍°∇°◍)ﾉﾞ    bootdo启动成功      ヾ(◍°∇°◍)ﾉﾞ\n" +
                 " ______                    _   ______            \n" +
                 "|_   _ \\                  / |_|_   _ `.          \n" +
