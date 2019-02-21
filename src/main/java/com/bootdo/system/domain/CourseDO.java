@@ -17,12 +17,14 @@ public class CourseDO implements Serializable {
     private Integer id;
     //课程种类名称
     private Integer trainCorseId;
+    private String trainCorseCateName;
     //培训课程名称
     private String name;
     //点击数
     private Integer clickCount;
     //教师id
     private Integer teacherId;
+    private String teacherName;
     //价格
     private BigDecimal price;
     //会员价格
@@ -204,5 +206,33 @@ public class CourseDO implements Serializable {
      */
     public Date getUpdateTime() {
         return updateTime;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getTrainCorseCateName() {
+        return trainCorseCateName;
+    }
+
+    public void setTrainCorseCateName(String trainCorseCateName) {
+        this.trainCorseCateName = trainCorseCateName;
+    }
+
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
+    public Boolean getFree() {
+        return isFree;
+    }
+
+    public void setFree(Boolean free) {
+        isFree = free;
     }
 }

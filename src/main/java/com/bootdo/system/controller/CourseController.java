@@ -10,6 +10,7 @@ import com.bootdo.system.service.CourseCateService;
 import com.bootdo.system.service.CourseService;
 import com.bootdo.system.service.TeacherService;
 import com.google.common.collect.Maps;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,6 +51,19 @@ public class CourseController {
         //查询列表数据
         Query query = new Query(params);
         List<CourseDO> courseList = courseService.list(query);
+        if (CollectionUtils.isNotEmpty(courseList)) {
+            courseList.forEach(i -> {
+                TeacherDO teacherDO = teacherService.get(i.getTeacherId());
+                if (teacherDO != null) {
+                    i.setTeacherName(teacherDO.getUsername());
+                }
+                CourseCateDO courseCateDO = courseCateService.get(i.getTrainCorseId());
+                if (courseCateDO != null) {
+                    i.setTrainCorseCateName(courseCateDO.getName());
+                }
+            });
+
+        }
         int total = courseService.count(query);
         PageUtils pageUtils = new PageUtils(courseList, total);
         return pageUtils;
