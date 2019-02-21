@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>星友会中心</title>
+    <!--整体页面布局 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- 定位标志的显示。主页与星友会中心中间的导航标识。-->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+    <!-- 快速链接中左手边的大于号：>的显示。-->
+    <link rel="stylesheet" type="text/css" href="/css/edua-icons.css">
+    <!--body的图片出现时，滑动的效果出现。 -->
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css">
+   <!-- <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/owl.transitions.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/cubeportfolio.min.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/settings.css">-->
+    <!-- 控制首页那一栏，上下滑动时的格式-->
+    <link rel="stylesheet" type="text/css" href="/css/bootsnav.css">
+    <!--整体布局，footer\body\header，显示大图片，背景。 -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!--刷新时黄色球球的格式-->
+    <link rel="stylesheet" type="text/css" href="/css/loader.css">
+</head>
+
+<body>
+<a href="#" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+<!--Loader-->
+<div class="loader">
+    <div class="bouncybox">
+        <div class="bouncy"></div>
+    </div>
+</div>
+
+<div class="topbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-left">
+                    <span class="info"><a href="about.html">点击了解一下.</a></span>
+                </div>
+                <div class="social_top pull-right">
+                    <span class="info"><a href="login.jsp" class="login" rel="nofollow">登录</a></span>
+                    &nbsp;
+                    <span class="info"><a href="register.jsp" class="top-register" el="nofollow">免费注册</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Header-->
+<header>
+    <nav th:include="front/include_front::nav"  class="navbar navbar-default navbar-fixed white no-background bootsnav" ></nav>
+</header>
+
+
+
+<!--Page Header-->
+<section class="page_header padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 page-content">
+                <h1>星友会中心</h1>
+                <p>旨在为星星家人们提供线下与名师面对面的机会。</p>
+                <p>帮助学员明确学习方向，鉴定学习信念，分享学习经历，交流学习方法。</p>
+                <p>大家齐聚一堂，为实现英语提升、财富积累、技能交换、人脉扩充、职业发展等共享多种资源...</p>
+
+                <div class="page_nav">
+                    <span>你在这里:</span> <a href="index.html">主页</a> <span><i class="fa fa-angle-double-right"></i>星友会中心</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--BLOG SECTION-->
+<section id="blog" class="padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <article class="blog_item heading_space wow fadeInLeft" data-wow-delay="300ms">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 heading_space">
+                            <div class="image"><img src="images/blog1.jpg" alt="blog" class="border_radius"></div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 heading_space">
+                            <h3>聚集万名英语爱好者的朋友圈</h3>
+                            <ul class="comment margin10">
+                                <li><a href="#.">May 10, 2016</a></li>
+                                <li><a href="#."><i class="icon-comment"></i> 5</a></li>
+                            </ul>
+                            <p class="margin10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab debitis ea est illum ipsa itaque libero optio quasi voluptas! Consequuntur
+                                deserunt expedita.
+                            </p>
+                            <p class="margin10">fugiat hic illum porro quidem quis recusandae vero? Aliquid assumenda cum delectus eaque eligendi, enim eum excepturi fugit illum impedit in
+                                iste laudantium modi natus […]
+                            </p>
+                            <a class=" btn_common btn_border margin10 border_radius" href="blog_detail.html">Read More</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog_item heading_space wow fadeInLeft" data-wow-delay="400ms">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 heading_space">
+                            <div class="image"><img src="images/blog2.jpg" alt="blog" class="border_radius"></div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 heading_space">
+                            <h3>丰富的活动内容，寓教于乐的学习方式。</h3>
+                            <ul class="comment margin10">
+                                <li><a href="#.">May 10, 2016</a></li>
+                                <li><a href="#."><i class="icon-comment"></i> 5</a></li>
+                            </ul>
+                            <p class="margin10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab debitis ea est illum ipsa itaque libero optio quasi voluptas! Consequuntur
+                                deserunt expedita.
+                            </p>
+                            <p class="margin10">fugiat hic illum porro quidem quis recusandae vero? Aliquid assumenda cum delectus eaque eligendi, enim eum excepturi fugit illum impedit in
+                                iste laudantium modi natus […]
+                            </p>
+                            <a class=" btn_common btn_border margin10 border_radius" href="blog_detail.html">Read More</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog_item heading_space wow fadeInLeft" data-wow-delay="500ms">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 heading_space">
+                            <div class="image"><img src="images/blog3.jpg" alt="blog" class="border_radius"></div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 heading_space">
+                            <h3>拓展人脉资源，实现资源共享。</h3>
+                            <ul class="comment margin10">
+                                <li><a href="#.">May 10, 2016</a></li>
+                                <li><a href="#."><i class="icon-comment"></i> 5</a></li>
+                            </ul>
+                            <p class="margin10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab debitis ea est illum ipsa itaque libero optio quasi voluptas! Consequuntur
+                                deserunt expedita.
+                            </p>
+                            <p class="margin10">fugiat hic illum porro quidem quis recusandae vero? Aliquid assumenda cum delectus eaque eligendi, enim eum excepturi fugit illum impedit in
+                                iste laudantium modi natus […]
+                            </p>
+                            <a class=" btn_common btn_border margin10 border_radius" href="blog_detail.html">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<!--BLOG SECTION-->
+
+<!--Footer-->
+<footer class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 footer_panel bottom25">
+                <h3 class="heading bottom25">关于我们<span class="divider-left"></span></h3>
+                <a href="index.html" class="footer_logo bottom25"><img src="images/logo-white.png" alt="Edua"></a>
+                <p>走向世界，从星星外语开始。</p>
+
+            </div>
+            <div class="col-md-4 col-sm-4 footer_panel bottom25">
+                <h3 class="heading bottom25">快速链接<span class="divider-left"></span></h3>
+                <ul class="links">
+                    <li><a href="index.html"><i class="icon-chevron-small-right"></i>首页</a></li>
+                    <li><a href="courses.html"><i class="icon-chevron-small-right"></i>课程</a></li>
+                    <li><a href="teachers.html"><i class="icon-chevron-small-right"></i>中外教师资</a></li>
+                    <li><a href="about.html"><i class="icon-chevron-small-right"></i>关于我们</a></li>
+
+                    <li><a href="xingyouhui.html"><i class="icon-chevron-small-right"></i>星友会中心</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-4 footer_panel bottom25">
+                <h3 class="heading bottom25">保持联系<span class="divider-left"></span></h3>
+                <p class=" address"><i class="icon-map-pin"></i>198 West 21th Street Victoria 8007, Australia</p>
+                <p class=" address"><i class="icon-phone"></i>(654) 332-112-222</p>
+                <p class=" address"><i class="icon-mail"></i><a href="mailto:Edua@info.com">Edua@info.com</a></p>
+                <img src="images/footer-map.png" alt="we are here" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</footer>
+<!--FOOTER ends-->
+
+
+
+<script src="/js/jquery-2.2.3.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootsnav.js"></script>
+<script src="/js/jquery.appear.js"></script>
+<script src="/js/jquery-countTo.js"></script>
+<script src="/js/jquery.parallax-1.1.3.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.cubeportfolio.min.js"></script>
+<script src="/js/jquery.themepunch.tools.min.js"></script>
+<script src="/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/js/revolution.extension.layeranimation.min.js"></script>
+<script src="/js/revolution.extension.navigation.min.js"></script>
+<script src="/js/revolution.extension.parallax.min.js"></script>
+<script src="/js/revolution.extension.slideanims.min.js"></script>
+<script src="/js/revolution.extension.video.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/functions.js"></script>
+</body>
+</html>
+

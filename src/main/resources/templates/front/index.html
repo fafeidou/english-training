@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>首页</title>
     <!--前两行的格式，（联系、登录、首页等底部、大体的轮廓的格式）-->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <!--轮播图的左右点击的图标显示。<>：这样的图标-->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
     <!--body里面：长期巩固、打破地域限制、学习方式灵活，三个小图标的出现-->
-    <link rel="stylesheet" type="text/css" href="css/edua-icons.css">
+    <link rel="stylesheet" type="text/css" href="/css/edua-icons.css">
     <!--body里面：4个小笑脸的动态效果。和上面三个小图标出现的动态效果。以及整体页面的动态出场效果。-->
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css">
     <!--body部分的格式：核心课程、简单四步。图片和底部汉字。-->
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/css/owl.carousel.css">
     <!--body：水平化进阶的左右格局的调整-->
-    <link rel="stylesheet" type="text/css" href="css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/css/settings.css">
     <!--首页等五个内容的格式的背景与效果，大小。-->
-    <link rel="stylesheet" type="text/css" href="css/bootsnav.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootsnav.css">
     <!--整个页面背景、效果的调整。包括底部背景与效果，body的背景与效果，footer的背景与效果。还有，登录框框的背景与效果。-->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <!--刷新时黄色球球的格式-->
-    <link rel="stylesheet" type="text/css" href="css/loader.css">
+    <link rel="stylesheet" type="text/css" href="/css/loader.css">
     <!--导入布局js，共享header和footer-->
-    <script type="text/javascript" src="js/include.js"></script>
+   <!-- <script type="text/javascript" src="/js/include.js"></script>-->
 </head>
+<!--前两行的格式，（联系、登录、首页等底部、大体的轮廓的格式）-->
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 <body>
 <!--Loader-->
 <div class="loader">
@@ -53,28 +55,7 @@
 
 <!--Header-->
 <header>
-    <nav class="navbar navbar-default navbar-fixed white no-background bootsnav">
-        <div class="container">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="index.html"><img src="images/logo-white.png" alt="logo" class="logo logo-display"><!--首页那一栏，在页面下拉时，会变成白色。-->
-                    <img src="images/logo.png" class="logo logo-scrolled" alt="">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-menu">
-                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOut">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="courses.html">课程</a></li>
-                    <li><a href="teachers.html">中外教师资</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-                    <li><a href="xingyouhui.html">星友会中心</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <nav th:include="front/include_front::nav"  class="navbar navbar-default navbar-fixed white no-background bootsnav" ></nav>
 </header>
 
 
@@ -85,11 +66,11 @@
         <ul>
             <!-- SLIDE  -->
             <li data-transition="fade">
-                <img src="images/banner1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+                <img src="/images/banner1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
             </li>
 
             <li data-transition="fade">
-                <img src="images/banner2.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
+                <img src="/images/banner2.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
             </li>
         </ul>
     </div><!-- END REVOLUTION SLIDER -->
@@ -127,24 +108,24 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="about-post">
-                            <a href="#." class="border_radius"><img src="images/awesome.png" alt=""></a>
+                            <a href="#." class="border_radius"><img src="/images/awesome.png" alt=""></a>
                             <h4>第1阶段(1级)</h4>
                             <p>通过基础学习和定型训练，逐步达到听音写词，见词读音的水平。</p>
                         </div>
                         <div class="about-post">
-                            <a href="#." class="border_radius"><img src="images/awesome.png" alt=""></a>
+                            <a href="#." class="border_radius"><img src="/images/awesome.png" alt=""></a>
                             <h4>第2阶段(2-4级)</h4>
                             <p>再提升1500个词汇，掌握基本句型，交互式口语模拟场景演真的进阶训练。</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="about-post">
-                            <a href="#." class="border_radius"><img src="images/awesome.png" alt=""></a>
+                            <a href="#." class="border_radius"><img src="/images/awesome.png" alt=""></a>
                             <h4>第3阶段(5-7级)</h4>
                             <p>再提升3000个词汇量，在实战训练中塑造英语思维，打下坚实的英语基础。</p>
                         </div>
                         <div class="about-post">
-                            <a href="#." class="border_radius"><img src="images/awesome.png" alt=""></a>
+                            <a href="#." class="border_radius"><img src="/images/awesome.png" alt=""></a>
                             <h4>第4阶段(8-10级)</h4>
                             <p>深度锻造长难听说能力，掌握较复杂的语言结构。4000个词汇量的积累使您在典型的商务环境中进行复杂的交谈。</p>
                         </div>
@@ -152,7 +133,7 @@
                 </div>
             </div>
             <div class="col-md-5 col-sm-6 wow fadeInRight" data-wow-delay="300ms">
-                <img src="images/about.jpg" alt="our priorties" class="img-responsive" style="width:100%;">
+                <img src="/images/about.jpg" alt="our priorties" class="img-responsive" style="width:100%;">
             </div>
         </div>
     </div>
@@ -171,7 +152,7 @@
                     <div id="course_slider" class="owl-carousel">
                         <div class="item">
                             <div class="image bottom20">
-                                <img src="images/study.jpg" alt="Courses" class="img-responsive border_radius">
+                                <img src="/images/study.jpg" alt="Courses" class="img-responsive border_radius">
                             </div>
                             <h3 class="bottom15"><a href="course_detail.html">Top Talk:团队式分享和学习</a></h3>
                             <p class="bottom15">人性化的网络教学平台，名师真人互动。集中定时授课和线下分组操练，全天候真人在线答疑。中外教结合实现完美的教学效果。</p>
@@ -179,7 +160,7 @@
                         </div>
                         <div class="item">
                             <div class="image bottom20">
-                                <img src="images/vip.jpg" alt="Courses" class="img-responsive border_radius">
+                                <img src="/images/vip.jpg" alt="Courses" class="img-responsive border_radius">
                             </div>
                             <h3 class="bottom15"><a href="course_detail.html">English Vip:高级讲师1对1定制</a></h3>
                             <p class="bottom15">每天25分钟，短时高效学习，全方位量身定制课程，根据个人基础提供精确的方法指导和训练，扫清口语障碍，英语提升更快。</p>
@@ -187,7 +168,7 @@
                         </div>
                         <div class="item">
                             <div class="image bottom20">
-                                <img src="images/english teacher.jpg" alt="Courses" class="img-responsive border_radius">
+                                <img src="/images/english teacher.jpg" alt="Courses" class="img-responsive border_radius">
                             </div>
                             <h3 class="bottom15"><a href="course_detail.html">Free Talk:全外教自由约课</a></h3>
                             <p class="bottom15">方便快捷的学习方式，自由选择的教学导师。上课时间、上课老师随你挑，全外教陪你操练口语，持续打造纯正母语环境。</p>
@@ -216,7 +197,7 @@
                         <div class="item">
                             <div class="content_wrap">
                                 <div class="image">
-                                    <img src="images/news1.jpg" alt="Edua" class="img-responsive border_radius">
+                                    <img src="/images/news1.jpg" alt="Edua" class="img-responsive border_radius">
                                 </div>
                                 <div class="news_box border_radius">
                                     <h4><a href="register.html">第1步</a></h4>
@@ -228,7 +209,7 @@
                         <div class="item">
                             <div class="content_wrap">
                                 <div class="image">
-                                    <img src="images/news3.jpg" alt="Edua" class="img-responsive border_radius">
+                                    <img src="/images/news3.jpg" alt="Edua" class="img-responsive border_radius">
                                 </div>
                                 <div class="news_box border_radius">
                                     <h4><a href="courses.html">第2步</a></h4>
@@ -240,7 +221,7 @@
                         <div class="item">
                             <div class="content_wrap">
                                 <div class="image">
-                                    <img src="images/news1.jpg" alt="Edua" class="img-responsive border_radius">
+                                    <img src="/images/news1.jpg" alt="Edua" class="img-responsive border_radius">
                                 </div>
                                 <div class="news_box border_radius">
                                     <h4><a href="test.html">第3步</a></h4>
@@ -262,7 +243,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-4 footer_panel bottom25">
                 <h3 class="heading bottom25">关于我们<span class="divider-left"></span></h3>
-                <a href="index.html" class="footer_logo bottom25"><img src="images/logo-white.png" alt="Edua"></a>
+                <a href="index.html" class="footer_logo bottom25"><img src="/images/logo-white.png" alt="Edua"></a>
                 <p>走向世界，从星星外语开始。</p>
             </div>
             <div class="col-md-4 col-sm-4 footer_panel bottom25">
@@ -280,7 +261,7 @@
                 <p class=" address"><i class="icon-map-pin"></i>198 West 21th Street Victoria 8007, Australia</p>
                 <p class=" address"><i class="icon-phone"></i>(654) 332-112-222</p>
                 <p class=" address"><i class="icon-mail"></i><a href="mailto:Edua@info.com">Edua@info.com</a></p>
-                <img src="images/footer-map.png" alt="we are here" class="img-responsive">
+                <img src="/images/footer-map.png" alt="we are here" class="img-responsive">
             </div>
         </div>
     </div>
@@ -288,23 +269,23 @@
 
 <!--FOOTER ends-->
 <!--加载整个页面内容-->
-<script src="js/jquery-2.2.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootsnav.js"></script>
-<script src="js/jquery.appear.js"></script>
-<script src="js/jquery-countTo.js"></script>
-<script src="js/jquery.parallax-1.1.3.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.cubeportfolio.min.js"></script>
-<script src="js/jquery.themepunch.tools.min.js"></script>
-<script src="js/jquery.themepunch.revolution.min.js"></script>
-<script src="js/revolution.extension.layeranimation.min.js"></script>
-<script src="js/revolution.extension.navigation.min.js"></script>
-<script src="js/revolution.extension.parallax.min.js"></script>
-<script src="js/revolution.extension.slideanims.min.js"></script>
-<script src="js/revolution.extension.video.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/functions.js"></script>
+<script src="/js/jquery-2.2.3.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootsnav.js"></script>
+<script src="/js/jquery.appear.js"></script>
+<script src="/js/jquery-countTo.js"></script>
+<script src="/js/jquery.parallax-1.1.3.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.cubeportfolio.min.js"></script>
+<script src="/js/jquery.themepunch.tools.min.js"></script>
+<script src="/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/js/revolution.extension.layeranimation.min.js"></script>
+<script src="/js/revolution.extension.navigation.min.js"></script>
+<script src="/js/revolution.extension.parallax.min.js"></script>
+<script src="/js/revolution.extension.slideanims.min.js"></script>
+<script src="/js/revolution.extension.video.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/functions.js"></script>
 </body>
 </html>
 
