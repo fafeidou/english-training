@@ -57,5 +57,19 @@ public class FrontCourseController {
         return "front/courses";
     }
 
-
+    @GetMapping("/courses/details")
+    public String details(@RequestParam Map<String, Object> params, ModelMap modelMap) {
+        Object courseId = params.get("courseId");
+        CourseDO courseDO = courseService.get((Integer) courseId);
+        TeacherDO teacherDO = teacherService.get(courseDO.getTeacherId());
+        if (teacherDO != null) {
+            courseDO.setTeacherName(teacherDO.getUsername());
+        }
+        CourseCateDO courseCateDO = courseCateService.get(courseDO.getTrainCorseId());
+        if (courseCateDO != null) {
+            courseDO.setTrainCorseCateName(courseCateDO.getName());
+        }
+        modelMap.put("courseDO", courseDO);
+        return "front/course_detail";
+    }
 }

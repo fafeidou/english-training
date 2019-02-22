@@ -84,10 +84,11 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/logout", "logout");
         filterChainDefinitionMap.put("/", "anon");
         filterChainDefinitionMap.put("/blog", "anon");
-        filterChainDefinitionMap.put("/front", "anon");
-        filterChainDefinitionMap.put("/courses", "anon");
-        filterChainDefinitionMap.put("/teachers", "anon");
-        filterChainDefinitionMap.put("/about", "anon");
+        filterChainDefinitionMap.put("/front/**", "anon");
+        filterChainDefinitionMap.put("/courses/**", "anon");
+        filterChainDefinitionMap.put("/courses/details", "anon");
+        filterChainDefinitionMap.put("/teachers/**", "anon");
+        filterChainDefinitionMap.put("/about/**", "anon");
         filterChainDefinitionMap.put("/xingyouhui", "anon");
         filterChainDefinitionMap.put("/blog/open/**", "anon");
         filterChainDefinitionMap.put("/**", "authc");

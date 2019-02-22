@@ -85,11 +85,11 @@
                     <div class="image">
                         <img th:src="${row.url}" alt="Edua" class="img-responsive border-radius">
                         <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
+                            <a class="btn_common yellow border_radius btn-cart" th:href="@{'/courses/details?courseId='+${row.id}}">add to cart</a>
                         </div>
                     </div>
                     <div class="shop_content text-center">
-                        课程名称:<h4 th:text="${row.trainCorseCateName}"><a href="shop_detail.html" class="title_link"></a></h4>
+                        课程名称:<h4 th:text="${row.trainCorseCateName}"><a href="/courses/details" class="title_link"></a></h4>
                         教师姓名:<p th:text="${row.teacherName}"></p>
                         价格:<h4 class="price_product" th:text="${row.price}"></h4>
                     </div>
@@ -100,14 +100,13 @@
 </section>
 <!--Shoping-->
 
-
 <!--FOOTER-->
 <footer class="padding-top">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-4 footer_panel bottom25">
                 <h3 class="heading bottom25">关于我们<span class="divider-left"></span></h3>
-                <a href="index.html" class="footer_logo bottom25"><img src="images/logo-white.png" alt="Edua"></a>
+                <a href="index.html" class="footer_logo bottom25"><img src="/images/logo-white.png" alt="Edua"></a>
                 <p>走向世界，从星星外语开始。</p>
 
             </div>
@@ -127,7 +126,7 @@
                 <p class=" address"><i class="icon-map-pin"></i>198 West 21th Street Victoria 8007, Australia</p>
                 <p class=" address"><i class="icon-phone"></i>(654) 332-112-222</p>
                 <p class=" address"><i class="icon-mail"></i><a href="mailto:Edua@info.com">Edua@info.com</a></p>
-                <img src="images/footer-map.png" alt="we are here" class="img-responsive">
+                <img src="/images/footer-map.png" alt="we are here" class="img-responsive">
             </div>
         </div>
     </div>
