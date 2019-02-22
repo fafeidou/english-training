@@ -60,7 +60,7 @@ public class FrontCourseController {
     @GetMapping("/courses/details")
     public String details(@RequestParam Map<String, Object> params, ModelMap modelMap) {
         Object courseId = params.get("courseId");
-        CourseDO courseDO = courseService.get((Integer) courseId);
+        CourseDO courseDO = courseService.get(Integer.parseInt(courseId.toString()));
         TeacherDO teacherDO = teacherService.get(courseDO.getTeacherId());
         if (teacherDO != null) {
             courseDO.setTeacherName(teacherDO.getUsername());

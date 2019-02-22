@@ -91,7 +91,9 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8 course_detail wow fadeIn" data-wow-delay="400ms">
-        <img src="/images/course-detail.jpg" alt="Course" class=" border_radius img-responsive bottom15">
+        <video controls width="500px" height="500px">
+          <source th:src="${courseDO.videoUrl}" type="video/mp4">
+        </video>
         <div class="detail_course">
           <div class="info_label">
             <span class="icony"><i class="icon-users3"></i></span>
