@@ -80,123 +80,18 @@
 <section id="shop" class="padding">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="300ms">
+            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="300ms" th:each="row:${pageUtils.rows}" >
                 <div class="shopping_box">
                     <div class="image">
-                        <img src="images/shop1.jpg" alt="Edua" class="img-responsive border-radius">
+                        <img th:src="${row.url}" alt="Edua" class="img-responsive border-radius">
                         <div class="overlay border_radius">
                             <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
                         </div>
                     </div>
                     <div class="shop_content text-center">
-                        <h4><a href="shop_detail.html" class="title_link">Online Course</a></h4>
-                        <p>We offer the most complete in the country</p>
-                        <h4 class="price_product">$230.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="400ms">
-                <div class="shopping_box">
-                    <div class="image">
-                        <img src="images/shop1.jpg" alt="Edua" class="img-responsive border-radius">
-                        <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
-                        </div>
-                    </div>
-                    <div class="shop_content text-center">
-                        <h4><a href="shop_detail.html" class="title_link">Online Course</a></h4>
-                        <p>We offer the most complete in the country</p>
-                        <h4 class="price_product">$230.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="500ms">
-                <div class="shopping_box">
-                    <div class="image">
-                        <img src="images/shop1.jpg" alt="Edua" class="img-responsive border-radius">
-                        <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
-                        </div>
-                    </div>
-                    <div class="shop_content text-center">
-                        <h4><a href="shop_detail.html" class="title_link">Online Course</a></h4>
-                        <p>We offer the most complete in the country</p>
-                        <h4 class="price_product">$230.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="600ms">
-                <div class="shopping_box">
-                    <div class="image">
-                        <img src="images/shop1.jpg" alt="Edua" class="img-responsive border-radius">
-                        <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
-                        </div>
-                    </div>
-                    <div class="shop_content text-center">
-                        <h4><a href="shop_detail.html" class="title_link">Online Course</a></h4>
-                        <p>We offer the most complete in the country</p>
-                        <h4 class="price_product">$230.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="700ms">
-                <div class="shopping_box">
-                    <div class="image">
-                        <img src="images/shop1.jpg" alt="Edua" class="img-responsive border-radius">
-                        <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
-                        </div>
-                    </div>
-                    <div class="shop_content text-center">
-                        <h4><a href="shop_detail.html" class="title_link">Online Course</a></h4>
-                        <p>We offer the most complete in the country</p>
-                        <h4 class="price_product">$230.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="800ms">
-                <div class="shopping_box">
-                    <div class="image">
-                        <img src="images/shop1.jpg" alt="Edua" class="img-responsive border-radius">
-                        <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
-                        </div>
-                    </div>
-                    <div class="shop_content text-center">
-                        <h4><a href="shop_detail.html" class="title_link">Online Course</a></h4>
-                        <p>We offer the most complete in the country</p>
-                        <h4 class="price_product">$230.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="900ms">
-                <div class="shopping_box">
-                    <div class="image">
-                        <img src="images/shop1.jpg" alt="Edua" class="img-responsive border-radius">
-                        <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
-                        </div>
-                    </div>
-                    <div class="shop_content text-center">
-                        <h4><a href="shop_detail.html" class="title_link">Online Course</a></h4>
-                        <p>We offer the most complete in the country</p>
-                        <h4 class="price_product">$230.00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="1000ms">
-                <div class="shopping_box">
-                    <div class="image">
-                        <img src="images/shop1.jpg" alt="Edua" class="img-responsive border-radius">
-                        <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" href="shop_cart.html">add to cart</a>
-                        </div>
-                    </div>
-                    <div class="shop_content text-center">
-                        <h4><a href="shop_detail.html" class="title_link">Online Course</a></h4>
-                        <p>We offer the most complete in the country</p>
-                        <h4 class="price_product">$230.00</h4>
+                        课程名称:<h4 th:text="${row.trainCorseCateName}"><a href="shop_detail.html" class="title_link"></a></h4>
+                        教师姓名:<p th:text="${row.teacherName}"></p>
+                        价格:<h4 class="price_product" th:text="${row.price}"></h4>
                     </div>
                 </div>
             </div>

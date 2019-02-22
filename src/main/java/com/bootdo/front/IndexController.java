@@ -16,11 +16,6 @@ public class IndexController {
         return "front/index";
     }
 
-    @GetMapping("/courses")
-    public String courses() {
-        return "front/courses";
-    }
-
     @GetMapping("/teachers")
     public String teachers() {
         return "front/teachers";
