@@ -38,23 +38,8 @@
     </div>
 </div>
 
-<div class="topbar">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="pull-left">
-                    <span class="info"><a href="about.html">点击了解一下.</a></span>
-                </div>
-                <div class="social_top pull-right">
-                    <span class="info"><a href="login.jsp" class="login" rel="nofollow">登录</a></span>
-                    &nbsp;
-                    <span class="info"><a href="register.jsp" class="top-register" el="nofollow">免费注册</a></span>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="topbar" th:include="front/include_front::topbar">
 </div>
-
 <!--Header-->
 <header>
     <nav th:include="front/include_front::nav"  class="navbar navbar-default navbar-fixed white no-background bootsnav" ></nav>
