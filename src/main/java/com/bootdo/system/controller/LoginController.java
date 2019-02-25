@@ -103,7 +103,7 @@ public class LoginController extends BaseController {
     @GetMapping("/logout")
     String logout() {
         ShiroUtils.logout();
-        return "redirect:/login";
+        return "redirect:/front";
     }
 
     @GetMapping("/main")

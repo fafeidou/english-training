@@ -1,6 +1,7 @@
 package com.bootdo.front;
 
 import com.bootdo.common.utils.PageUtils;
+import com.bootdo.common.utils.Query;
 import com.bootdo.system.domain.CourseCateDO;
 import com.bootdo.system.domain.CourseDO;
 import com.bootdo.system.domain.TeacherDO;
@@ -36,8 +37,8 @@ public class FrontCourseController {
     @GetMapping("/courses")
     public String courses(@RequestParam Map<String, Object> params, ModelMap modelMap) {
         //查询列表数据
-//        Query query = new Query(Maps.newHashMap());
-        List<CourseDO> courseList = courseService.list(Maps.newHashMap());
+        Query query = new Query(params);
+        List<CourseDO> courseList = courseService.list(query);
         if (CollectionUtils.isNotEmpty(courseList)) {
             courseList.forEach(i -> {
                 TeacherDO teacherDO = teacherService.get(i.getTeacherId());
@@ -51,7 +52,7 @@ public class FrontCourseController {
             });
 
         }
-        int total = courseService.count(Maps.newHashMap());
+        int total = courseService.count(query);
         PageUtils pageUtils = new PageUtils(courseList, total);
         modelMap.addAttribute("pageUtils", pageUtils);
         return "front/courses";

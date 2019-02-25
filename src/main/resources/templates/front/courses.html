@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="/css/front/style.css">
     <!--刷新时黄色球球的格式-->
     <link rel="stylesheet" type="text/css" href="/css/front/loader.css">
+    <link rel="stylesheet" type="text/css" href="/css/front/pagestyle.css">
 </head>
 
 <body>
@@ -38,9 +39,9 @@
 </div>
 <!--Header-->
 <header>
-    <nav th:include="front/include_front::nav"  class="navbar navbar-default navbar-fixed white no-background bootsnav" ></nav>
+    <nav th:include="front/include_front::nav"
+         class="navbar navbar-default navbar-fixed white no-background bootsnav"></nav>
 </header>
-
 
 <!--Page Header-->
 <section class="page_header padding-top">
@@ -53,34 +54,39 @@
                 <p></p>
 
                 <div class="page_nav">
-                    <span>你在这里:</span> <a href="index.html">主页</a> <span><i class="fa fa-angle-double-right"></i>中外教师资</span>
+                    <span>你在这里:</span> <a href="index.html">主页</a> <span><i
+                        class="fa fa-angle-double-right"></i>中外教师资</span>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 <!--Page Header-->
-
 <!--Shopping-->
 <section id="shop" class="padding">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="300ms" th:each="row:${pageUtils.rows}" >
+            <div class="col-md-3 col-sm-6 margin10 bottom15 wow fadeIn" data-wow-delay="300ms"
+                 th:each="row:${pageUtils.rows}">
                 <div class="shopping_box">
                     <div class="image">
                         <img th:src="${row.url}" alt="Edua" class="img-responsive border-radius">
                         <div class="overlay border_radius">
-                            <a class="btn_common yellow border_radius btn-cart" th:href="@{'/courses/details?courseId='+${row.id}}">add to cart</a>
+                            <a class="btn_common yellow border_radius btn-cart"
+                               th:href="@{'/courses/details?courseId='+${row.id}}">add to cart</a>
                         </div>
                     </div>
                     <div class="shop_content text-center">
-                        课程名称:<h4 th:text="${row.trainCorseCateName}"><a href="/courses/details" class="title_link"></a></h4>
+                        课程名称:<h4 th:text="${row.trainCorseCateName}"><a href="/courses/details" class="title_link"></a>
+                    </h4>
                         教师姓名:<p th:text="${row.teacherName}"></p>
                         价格:<h4 class="price_product" th:text="${row.price}"></h4>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="page" url="/courses"></div>
     </div>
 </section>
 <!--Shoping-->
@@ -120,7 +126,6 @@
 <!--FOOTER ends-->
 
 
-
 <script src="/js/front/jquery-2.2.3.js"></script>
 <script src="/js/front/bootstrap.min.js"></script>
 <script src="/js/front/bootsnav.js"></script>
@@ -138,7 +143,30 @@
 <script src="/js/front/revolution.extension.video.min.js"></script>
 <script src="/js/front/wow.min.js"></script>
 <script src="/js/front/functions.js"></script>
+<script src="/js/front/page.js"></script>
+<script src="/js/front/jquery-3.1.1.min.js"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var total = /*[[${pageUtils.total}]]*/ null;
+    Pagination.Init(document.getElementById('page'), {
+        size: total / 8, // pages size
+        page: 1,  // selected page
+        step: 3,   // pages before and after current
+        url: '/courses',
+        offset: 0,
+        limit: 8
+    });
+    /*]]>*/
 
+    function back(page_index) {
+        var url = $("#page").attr('url');
+        var tourl;
+        if (url.indexOf('?') > 0)
+            tourl = url + '&offset=' + page_index + '&limit=2';
+        else
+            tourl = url + '?offset=' + page_index + '&limit=2';
+    }
+</script>
 </body>
 </html>
 

@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 25/02/2019 14:04:04
+ Date: 25/02/2019 16:52:47
 */
 
 SET NAMES utf8mb4;
@@ -918,7 +918,7 @@ CREATE TABLE `sys_file`  (
   `url` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'URL地址',
   `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 181 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '文件上传' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 195 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '文件上传' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_file
@@ -966,6 +966,20 @@ INSERT INTO `sys_file` VALUES (177, 0, '/files/c6a77c4b-6dee-43ce-838b-4b058bcc8
 INSERT INTO `sys_file` VALUES (178, 0, '/files/a9b91f79-6a3e-4a60-88b8-240b83c6eed7.jpg', '2019-02-24 17:30:43');
 INSERT INTO `sys_file` VALUES (179, 0, '/files/8424a46f-75e2-4e5d-b30f-3da961dc109c.jpg', '2019-02-24 17:31:11');
 INSERT INTO `sys_file` VALUES (180, 0, '/files/4b4b7e4f-d62d-44db-9bf3-ac73576ba4ec.jpg', '2019-02-25 13:46:04');
+INSERT INTO `sys_file` VALUES (181, 0, '/files/df04958b-d3b0-4320-81ec-830dfd0d98a3.jpg', '2019-02-25 16:35:17');
+INSERT INTO `sys_file` VALUES (182, 0, '/files/d9c63712-a70b-4117-98e9-6ec0318434a6.jpg', '2019-02-25 16:35:26');
+INSERT INTO `sys_file` VALUES (183, 2, '/files/ac064ba6-1e6e-424a-a16d-810a9f4b258c.mp4', '2019-02-25 16:35:40');
+INSERT INTO `sys_file` VALUES (184, 2, '/files/604b9b92-1626-425d-804d-e2dd7b2e8b62.mp4', '2019-02-25 16:36:09');
+INSERT INTO `sys_file` VALUES (185, 0, '/files/1d87eec4-ea23-4177-b600-1d83ee7c0349.jpg', '2019-02-25 16:36:14');
+INSERT INTO `sys_file` VALUES (186, 2, '/files/31321e0d-0d93-4b57-81c9-b1a0cfd0c50a.mp4', '2019-02-25 16:36:21');
+INSERT INTO `sys_file` VALUES (187, 2, '/files/4e91c994-3b30-4318-9d4f-65251feb8fe9.mp4', '2019-02-25 16:40:18');
+INSERT INTO `sys_file` VALUES (188, 0, '/files/fadaa454-a8da-414e-8167-4d642b1be332.jpg', '2019-02-25 16:40:23');
+INSERT INTO `sys_file` VALUES (189, 0, '/files/332ec808-6be8-455a-9a8a-38cdad6cb9d3.jpg', '2019-02-25 16:40:40');
+INSERT INTO `sys_file` VALUES (190, 2, '/files/cfabd0e6-8c70-476b-b3dd-2b558b302b5e.mp4', '2019-02-25 16:40:44');
+INSERT INTO `sys_file` VALUES (191, 0, '/files/3ea4d8f9-7b89-4f65-9545-54a04b5be84d.jpg', '2019-02-25 16:49:05');
+INSERT INTO `sys_file` VALUES (192, 2, '/files/505618bc-d20b-4e94-bfe7-4b191d35c863.mp4', '2019-02-25 16:49:09');
+INSERT INTO `sys_file` VALUES (193, 0, '/files/f06e8f8c-1d9c-48ad-bc8f-4cf62f549fb1.jpg', '2019-02-25 16:49:25');
+INSERT INTO `sys_file` VALUES (194, 2, '/files/38aa247a-cba6-407b-9c39-01f7edd5a25c.mp4', '2019-02-25 16:49:30');
 
 -- ----------------------------
 -- Table structure for sys_log
@@ -982,7 +996,7 @@ CREATE TABLE `sys_log`  (
   `ip` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP地址',
   `gmt_create` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 970 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 987 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_log
@@ -1348,6 +1362,23 @@ INSERT INTO `sys_log` VALUES (966, 1, 'admin', '请求访问主页', 41, 'com.bo
 INSERT INTO `sys_log` VALUES (967, -1, '获取用户信息为空', '游客登录', 8, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:51:00');
 INSERT INTO `sys_log` VALUES (968, -1, '获取用户信息为空', '游客登录', 30, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:56:39');
 INSERT INTO `sys_log` VALUES (969, -1, '获取用户信息为空', '游客登录', 29, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:57:57');
+INSERT INTO `sys_log` VALUES (970, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'java.lang.NullPointerException', NULL, '2019-02-25 15:37:33');
+INSERT INTO `sys_log` VALUES (971, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'org.springframework.jdbc.BadSqlGrammarException: \r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7\r\n### The error may exist in file [C:\\idea_work\\git\\english-training\\target\\classes\\mybatis\\system\\CourseMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select `id`,`train_corse_id`,`name`,`click_count`,`teacher_id`,`price`,`vip_price`,`is_free`,`url`,`video_url`,`create_time`,`update_time` from train_course                                      order by id desc             limit ?, ?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7', NULL, '2019-02-25 15:42:43');
+INSERT INTO `sys_log` VALUES (972, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'org.springframework.jdbc.BadSqlGrammarException: \r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7\r\n### The error may exist in file [C:\\idea_work\\git\\english-training\\target\\classes\\mybatis\\system\\CourseMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select `id`,`train_corse_id`,`name`,`click_count`,`teacher_id`,`price`,`vip_price`,`is_free`,`url`,`video_url`,`create_time`,`update_time` from train_course                                      order by id desc             limit ?, ?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7', NULL, '2019-02-25 15:43:11');
+INSERT INTO `sys_log` VALUES (973, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'org.springframework.jdbc.BadSqlGrammarException: \r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7\r\n### The error may exist in file [C:\\idea_work\\git\\english-training\\target\\classes\\mybatis\\system\\CourseMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select `id`,`train_corse_id`,`name`,`click_count`,`teacher_id`,`price`,`vip_price`,`is_free`,`url`,`video_url`,`create_time`,`update_time` from train_course                                      order by id desc             limit ?, ?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'1\', \'10\'\' at line 7', NULL, '2019-02-25 15:43:31');
+INSERT INTO `sys_log` VALUES (974, -1, '获取用户信息为空', '登录', 383, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 16:23:15');
+INSERT INTO `sys_log` VALUES (975, 1, 'admin', '登录', 56, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 16:23:20');
+INSERT INTO `sys_log` VALUES (976, 1, 'admin', '请求访问主页', 76, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 16:23:20');
+INSERT INTO `sys_log` VALUES (977, 1, 'admin', '登录', 79, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 16:27:52');
+INSERT INTO `sys_log` VALUES (978, 1, 'admin', '请求访问主页', 76, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 16:27:52');
+INSERT INTO `sys_log` VALUES (979, 1, 'admin', '登录', 11, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 16:34:58');
+INSERT INTO `sys_log` VALUES (980, 1, 'admin', '请求访问主页', 27, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 16:34:58');
+INSERT INTO `sys_log` VALUES (981, 1, 'admin', 'error', NULL, 'http://localhost/system/course/save', 'org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors\nField error in object \'courseDO\' on field \'isFree\': rejected value [22]; codes [typeMismatch.courseDO.isFree,typeMismatch.isFree,typeMismatch.java.lang.Boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [courseDO.isFree,isFree]; arguments []; default message [isFree]]; default message [Failed to convert property value of type \'java.lang.String\' to required type \'java.lang.Boolean\' for property \'isFree\'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value [22]]', NULL, '2019-02-25 16:36:21');
+INSERT INTO `sys_log` VALUES (982, 1, 'admin', 'error', NULL, 'http://localhost/system/course/save', 'org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors\nField error in object \'courseDO\' on field \'isFree\': rejected value [22]; codes [typeMismatch.courseDO.isFree,typeMismatch.isFree,typeMismatch.java.lang.Boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [courseDO.isFree,isFree]; arguments []; default message [isFree]]; default message [Failed to convert property value of type \'java.lang.String\' to required type \'java.lang.Boolean\' for property \'isFree\'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value [22]]', NULL, '2019-02-25 16:36:24');
+INSERT INTO `sys_log` VALUES (983, 1, 'admin', 'error', NULL, 'http://localhost/system/course/save', 'org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors\nField error in object \'courseDO\' on field \'isFree\': rejected value [22]; codes [typeMismatch.courseDO.isFree,typeMismatch.isFree,typeMismatch.java.lang.Boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [courseDO.isFree,isFree]; arguments []; default message [isFree]]; default message [Failed to convert property value of type \'java.lang.String\' to required type \'java.lang.Boolean\' for property \'isFree\'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value [22]]', NULL, '2019-02-25 16:36:29');
+INSERT INTO `sys_log` VALUES (984, 1, 'admin', '请求访问主页', 95, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 16:39:51');
+INSERT INTO `sys_log` VALUES (985, 1, 'admin', '登录', 17, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 16:47:09');
+INSERT INTO `sys_log` VALUES (986, 1, 'admin', '请求访问主页', 22, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 16:47:09');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -1957,7 +1988,7 @@ CREATE TABLE `train_course`  (
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of train_course
@@ -1966,6 +1997,11 @@ INSERT INTO `train_course` VALUES (4, 2, '1', 1, 2, 1.00, 1.00, b'1', '/files/c7
 INSERT INTO `train_course` VALUES (5, 2, '1', 1, 2, 1.00, 1.00, b'1', '/files/9c717b48-a9eb-4482-8ab1-b3e1902a60ca.jpg', '', '2019-02-20 22:45:10', '2019-02-20 22:45:10');
 INSERT INTO `train_course` VALUES (6, 2, '11', 1, 2, 1.00, 1.00, b'1', '/files/92e1c9fb-1baa-45b8-8a78-d1f30d0ce320.jpg', '/files/4063387b-85b4-4bad-9a05-0cb30d05a397.jpg', '2019-02-20 22:51:06', '2019-02-20 22:51:06');
 INSERT INTO `train_course` VALUES (7, 2, '1', 1, 2, 1.00, 1.00, b'1', '/files/eb98a4c9-1cd8-4b4c-918a-b2cf8eb1b9b4.jpg', '/files/0eab7e13-cbac-4557-9ae0-23cded880595.mp4', '2019-02-22 11:09:05', '2019-02-22 11:09:05');
+INSERT INTO `train_course` VALUES (8, 2, '234', 1, 2, 234234.00, 1234234.00, b'1', '/files/df04958b-d3b0-4320-81ec-830dfd0d98a3.jpg', '/files/ac064ba6-1e6e-424a-a16d-810a9f4b258c.mp4', '2019-02-25 16:35:41', '2019-02-25 16:35:41');
+INSERT INTO `train_course` VALUES (9, 2, '11', 1, 2, 1.00, 1.00, b'1', '/files/fadaa454-a8da-414e-8167-4d642b1be332.jpg', '/files/4e91c994-3b30-4318-9d4f-65251feb8fe9.mp4', '2019-02-25 16:40:24', '2019-02-25 16:40:24');
+INSERT INTO `train_course` VALUES (10, 2, '222', 222, 2, 2.00, 2.00, b'1', '/files/332ec808-6be8-455a-9a8a-38cdad6cb9d3.jpg', '/files/cfabd0e6-8c70-476b-b3dd-2b558b302b5e.mp4', '2019-02-25 16:40:45', '2019-02-25 16:40:45');
+INSERT INTO `train_course` VALUES (11, 2, '啦啦啦', 1, 2, 1.00, 1.00, b'1', '/files/3ea4d8f9-7b89-4f65-9545-54a04b5be84d.jpg', '/files/505618bc-d20b-4e94-bfe7-4b191d35c863.mp4', '2019-02-25 16:49:10', '2019-02-25 16:49:10');
+INSERT INTO `train_course` VALUES (12, 2, 'hello', 1, 2, 1.00, 1.00, b'1', '/files/f06e8f8c-1d9c-48ad-bc8f-4cf62f549fb1.jpg', '/files/38aa247a-cba6-407b-9c39-01f7edd5a25c.mp4', '2019-02-25 16:49:30', '2019-02-25 16:49:30');
 
 -- ----------------------------
 -- Table structure for train_course_cate
