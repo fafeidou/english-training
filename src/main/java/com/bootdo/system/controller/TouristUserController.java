@@ -1,5 +1,6 @@
 package com.bootdo.system.controller;
 
+import com.bootdo.common.utils.MD5Utils;
 import com.bootdo.common.utils.PageUtils;
 import com.bootdo.common.utils.Query;
 import com.bootdo.common.utils.R;
@@ -66,6 +67,7 @@ public class TouristUserController {
     @PostMapping("/save")
     @RequiresPermissions("system:touristUser:add")
     public R save(TouristUserDO touristUser) {
+        touristUser.setPassword(MD5Utils.encrypt(touristUser.getUsername(), touristUser.getPassword()));
         touristUser.setCreateTime(new Date());
         touristUser.setUpdateTime(new Date());
         if (touristUserService.save(touristUser) > 0) {

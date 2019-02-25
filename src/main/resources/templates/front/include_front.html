@@ -1,11 +1,12 @@
-<nav th:fragment="nav" >
+<nav th:fragment="nav">
     <div class="container">
 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="images/logo-white.png" alt="logo" class="logo logo-display">
+            <a class="navbar-brand" href="index.html"><img src="images/logo-white.png" alt="logo"
+                                                           class="logo logo-display">
                 <img src="images/logo.png" class="logo logo-scrolled" alt="">
             </a>
         </div>
@@ -27,14 +28,22 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="pull-left">
-                    <span class="info"><a href="about.html">点击了解一下.</a></span>
+                    <span class="info">
+                        <span th:if="${session.touristUser}" th:text="${session.touristUser.username}"></span>
+                        <span th:if="${session.touristUser == null}">欢迎光临本小站</span>
+                    </span>
                 </div>
                 <div class="social_top pull-right">
-                    <span class="info"><a href="/customer_login" class="login" rel="nofollow">登录</a></span>
-                    &nbsp;
-                    <span class="info"><a href="register.jsp" class="top-register" el="nofollow">免费注册</a></span>
-                    &nbsp;
+                    <span th:if="${session.touristUser == null}">
+                        <span class="info"><a href="tourist/login" class="tourist/login" rel="nofollow">登录</a></span>
+                        &nbsp;
+                        <span class="info"><a href="register.jsp" class="top-register" el="nofollow">免费注册</a></span>
+                        &nbsp;
                     <span class="info"><a href="/login" class="login" el="nofollow">管理员登录</a></span>
+                    </span>
+                    <span th:if="${session.touristUser}">
+                         <span class="info"><a href="tourist/loginOut" class="login" el="nofollow">登出</a></span>
+                    </span>
                 </div>
             </div>
         </div>
