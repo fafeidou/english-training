@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 21/02/2019 19:06:12
+ Date: 25/02/2019 14:04:04
 */
 
 SET NAMES utf8mb4;
@@ -918,7 +918,7 @@ CREATE TABLE `sys_file`  (
   `url` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'URL地址',
   `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 173 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '文件上传' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 181 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '文件上传' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_file
@@ -958,6 +958,14 @@ INSERT INTO `sys_file` VALUES (169, 0, '/files/114dcfb1-7b77-4a51-a5a7-e087bc7e0
 INSERT INTO `sys_file` VALUES (170, 0, '/files/b718fc01-b1f9-44e8-a926-ef87c82e08f8.jpg', '2019-02-20 22:49:28');
 INSERT INTO `sys_file` VALUES (171, 0, '/files/92e1c9fb-1baa-45b8-8a78-d1f30d0ce320.jpg', '2019-02-20 22:51:02');
 INSERT INTO `sys_file` VALUES (172, 0, '/files/4063387b-85b4-4bad-9a05-0cb30d05a397.jpg', '2019-02-20 22:51:05');
+INSERT INTO `sys_file` VALUES (173, 0, '/files/6e716f84-e4df-4ba3-bb83-6146797ed2ee.jpg', '2019-02-22 10:32:45');
+INSERT INTO `sys_file` VALUES (174, 2, '/files/0eab7e13-cbac-4557-9ae0-23cded880595.mp4', '2019-02-22 11:08:24');
+INSERT INTO `sys_file` VALUES (175, 0, '/files/eb98a4c9-1cd8-4b4c-918a-b2cf8eb1b9b4.jpg', '2019-02-22 11:08:55');
+INSERT INTO `sys_file` VALUES (176, 0, '/files/929d448c-c5b4-4273-9ae1-9e3fafedae73.jpg', '2019-02-24 17:29:55');
+INSERT INTO `sys_file` VALUES (177, 0, '/files/c6a77c4b-6dee-43ce-838b-4b058bcc8fa7.jpg', '2019-02-24 17:30:03');
+INSERT INTO `sys_file` VALUES (178, 0, '/files/a9b91f79-6a3e-4a60-88b8-240b83c6eed7.jpg', '2019-02-24 17:30:43');
+INSERT INTO `sys_file` VALUES (179, 0, '/files/8424a46f-75e2-4e5d-b30f-3da961dc109c.jpg', '2019-02-24 17:31:11');
+INSERT INTO `sys_file` VALUES (180, 0, '/files/4b4b7e4f-d62d-44db-9bf3-ac73576ba4ec.jpg', '2019-02-25 13:46:04');
 
 -- ----------------------------
 -- Table structure for sys_log
@@ -974,7 +982,7 @@ CREATE TABLE `sys_log`  (
   `ip` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP地址',
   `gmt_create` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 865 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 970 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_log
@@ -1235,6 +1243,111 @@ INSERT INTO `sys_log` VALUES (861, NULL, NULL, 'error', NULL, 'http://localhost/
 INSERT INTO `sys_log` VALUES (862, 1, 'admin', '登录', 31, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-21 17:39:54');
 INSERT INTO `sys_log` VALUES (863, 1, 'admin', '请求访问主页', 93, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-21 17:39:54');
 INSERT INTO `sys_log` VALUES (864, 1, 'admin', '请求访问主页', 21, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-21 17:40:01');
+INSERT INTO `sys_log` VALUES (865, -1, '获取用户信息为空', '登录', 17, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 09:36:47');
+INSERT INTO `sys_log` VALUES (866, 1, 'admin', '登录', 46, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 09:37:13');
+INSERT INTO `sys_log` VALUES (867, 1, 'admin', '请求访问主页', 68, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 09:37:13');
+INSERT INTO `sys_log` VALUES (868, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'java.lang.NullPointerException', NULL, '2019-02-22 09:55:10');
+INSERT INTO `sys_log` VALUES (869, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'java.lang.NullPointerException', NULL, '2019-02-22 09:55:12');
+INSERT INTO `sys_log` VALUES (870, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'java.lang.NullPointerException', NULL, '2019-02-22 09:55:24');
+INSERT INTO `sys_log` VALUES (871, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'java.lang.NullPointerException', NULL, '2019-02-22 09:56:37');
+INSERT INTO `sys_log` VALUES (872, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'java.lang.NullPointerException', NULL, '2019-02-22 09:56:39');
+INSERT INTO `sys_log` VALUES (873, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'java.lang.NullPointerException', NULL, '2019-02-22 09:56:43');
+INSERT INTO `sys_log` VALUES (874, NULL, NULL, 'error', NULL, 'http://localhost/courses', 'java.lang.NullPointerException', NULL, '2019-02-22 09:57:44');
+INSERT INTO `sys_log` VALUES (875, 1, 'admin', '登录', 3578, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 10:02:30');
+INSERT INTO `sys_log` VALUES (876, 1, 'admin', '请求访问主页', 143, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 10:02:31');
+INSERT INTO `sys_log` VALUES (877, 1, 'admin', '登录', 141, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 11:00:33');
+INSERT INTO `sys_log` VALUES (878, 1, 'admin', '请求访问主页', 91, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 11:00:33');
+INSERT INTO `sys_log` VALUES (879, 1, 'admin', '请求访问主页', 467, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 11:08:04');
+INSERT INTO `sys_log` VALUES (880, 1, 'admin', '登录', 70, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 11:46:13');
+INSERT INTO `sys_log` VALUES (881, 1, 'admin', '请求访问主页', 67, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 11:46:13');
+INSERT INTO `sys_log` VALUES (882, NULL, NULL, 'error', NULL, 'http://localhost/courses/details', 'java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer', NULL, '2019-02-22 18:06:20');
+INSERT INTO `sys_log` VALUES (883, NULL, NULL, 'error', NULL, 'http://localhost/courses/details', 'java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer', NULL, '2019-02-22 18:06:34');
+INSERT INTO `sys_log` VALUES (884, NULL, NULL, 'error', NULL, 'http://localhost/courses/details', 'java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer', NULL, '2019-02-22 18:06:44');
+INSERT INTO `sys_log` VALUES (885, 1, 'admin', '登录', 67, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 18:12:34');
+INSERT INTO `sys_log` VALUES (886, 1, 'admin', '请求访问主页', 69, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 18:12:34');
+INSERT INTO `sys_log` VALUES (887, 1, 'admin', '登录', 30, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 18:37:51');
+INSERT INTO `sys_log` VALUES (888, 1, 'admin', '请求访问主页', 22, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 18:37:51');
+INSERT INTO `sys_log` VALUES (889, 1, 'admin', '登录', 13, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 18:41:36');
+INSERT INTO `sys_log` VALUES (890, 1, 'admin', '请求访问主页', 19, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 18:41:36');
+INSERT INTO `sys_log` VALUES (891, 1, 'admin', '登录', 58, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 18:58:16');
+INSERT INTO `sys_log` VALUES (892, 1, 'admin', '请求访问主页', 77, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 18:58:17');
+INSERT INTO `sys_log` VALUES (893, 1, 'admin', '登录', 93, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 19:21:52');
+INSERT INTO `sys_log` VALUES (894, 1, 'admin', '请求访问主页', 82, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 19:21:52');
+INSERT INTO `sys_log` VALUES (895, 1, 'admin', '登录', 34, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-22 19:27:15');
+INSERT INTO `sys_log` VALUES (896, 1, 'admin', '请求访问主页', 70, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-22 19:27:16');
+INSERT INTO `sys_log` VALUES (897, 1, 'admin', '登录', 16, 'com.pajk.wowmedivh.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-23 10:01:33');
+INSERT INTO `sys_log` VALUES (898, 1, 'admin', '请求访问主页', 37, 'com.pajk.wowmedivh.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-23 10:01:33');
+INSERT INTO `sys_log` VALUES (899, 1, 'admin', '登录', 120, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 08:39:23');
+INSERT INTO `sys_log` VALUES (900, 1, 'admin', '请求访问主页', 63, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 08:39:24');
+INSERT INTO `sys_log` VALUES (901, 1, 'admin', '登录', 14, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 16:00:42');
+INSERT INTO `sys_log` VALUES (902, 1, 'admin', '请求访问主页', 42, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:00:42');
+INSERT INTO `sys_log` VALUES (903, 1, 'admin', '登录', 5, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 16:00:57');
+INSERT INTO `sys_log` VALUES (904, 1, 'admin', '请求访问主页', 24, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:00:57');
+INSERT INTO `sys_log` VALUES (905, 1, 'admin', '编辑用户', 35, 'com.bootdo.system.controller.UserController.edit()', NULL, '127.0.0.1', '2019-02-24 16:04:25');
+INSERT INTO `sys_log` VALUES (906, 1, 'admin', '编辑用户', 25, 'com.bootdo.system.controller.UserController.edit()', NULL, '127.0.0.1', '2019-02-24 16:04:44');
+INSERT INTO `sys_log` VALUES (907, 1, 'admin', '登录', 7, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 16:05:35');
+INSERT INTO `sys_log` VALUES (908, 1, 'admin', '请求访问主页', 17, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:05:35');
+INSERT INTO `sys_log` VALUES (909, 1, 'admin', '请求访问主页', 22, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:08:41');
+INSERT INTO `sys_log` VALUES (910, 1, 'admin', '请求访问主页', 10, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:09:45');
+INSERT INTO `sys_log` VALUES (911, 1, 'admin', '请求访问主页', 19, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:11:08');
+INSERT INTO `sys_log` VALUES (912, 1, 'admin', '请求访问主页', 34, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:13:07');
+INSERT INTO `sys_log` VALUES (913, 1, 'admin', '请求访问主页', 24, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:13:34');
+INSERT INTO `sys_log` VALUES (914, 1, 'admin', '请求访问主页', 16, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:14:30');
+INSERT INTO `sys_log` VALUES (915, 1, 'admin', '请求访问主页', 13, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:16:05');
+INSERT INTO `sys_log` VALUES (916, 1, 'admin', '请求访问主页', 11, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:16:06');
+INSERT INTO `sys_log` VALUES (917, 1, 'admin', '请求访问主页', 10, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:16:06');
+INSERT INTO `sys_log` VALUES (918, 1, 'admin', '请求访问主页', 16, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:16:06');
+INSERT INTO `sys_log` VALUES (919, 1, 'admin', '请求访问主页', 11, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:16:07');
+INSERT INTO `sys_log` VALUES (920, 1, 'admin', '登录', 32, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 16:17:08');
+INSERT INTO `sys_log` VALUES (921, 1, 'admin', '请求访问主页', 51, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:17:08');
+INSERT INTO `sys_log` VALUES (922, 1, 'admin', '请求访问主页', 20, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:17:53');
+INSERT INTO `sys_log` VALUES (923, 1, 'admin', '登录', 8, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 16:18:41');
+INSERT INTO `sys_log` VALUES (924, 1, 'admin', '请求访问主页', 18, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:18:41');
+INSERT INTO `sys_log` VALUES (925, 1, 'admin', '编辑用户', 38, 'com.bootdo.system.controller.UserController.edit()', NULL, '127.0.0.1', '2019-02-24 16:18:54');
+INSERT INTO `sys_log` VALUES (926, 1, 'admin', '请求访问主页', 16, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:20:13');
+INSERT INTO `sys_log` VALUES (927, 1, 'admin', '登录', 1, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 16:54:28');
+INSERT INTO `sys_log` VALUES (928, 1, 'admin', '登录', 10, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 16:54:34');
+INSERT INTO `sys_log` VALUES (929, 1, 'admin', '请求访问主页', 18, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:54:34');
+INSERT INTO `sys_log` VALUES (930, 1, 'admin', '编辑角色', 8, 'com.bootdo.system.controller.RoleController.edit()', NULL, '127.0.0.1', '2019-02-24 16:58:16');
+INSERT INTO `sys_log` VALUES (931, 1, 'admin', '更新角色', 62, 'com.bootdo.system.controller.RoleController.update()', NULL, '127.0.0.1', '2019-02-24 16:58:24');
+INSERT INTO `sys_log` VALUES (932, 1, 'admin', '登录', 5, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 16:58:33');
+INSERT INTO `sys_log` VALUES (933, 1, 'admin', '请求访问主页', 12, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 16:58:33');
+INSERT INTO `sys_log` VALUES (934, 1, 'admin', '登录', 12, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 17:01:33');
+INSERT INTO `sys_log` VALUES (935, 1, 'admin', '请求访问主页', 27, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 17:01:33');
+INSERT INTO `sys_log` VALUES (936, 1, 'admin', '登录', 93, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 17:08:33');
+INSERT INTO `sys_log` VALUES (937, 1, 'admin', '请求访问主页', 67, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 17:08:33');
+INSERT INTO `sys_log` VALUES (938, 1, 'admin', '编辑菜单', 42, 'com.bootdo.system.controller.MenuController.edit()', NULL, '127.0.0.1', '2019-02-24 17:08:59');
+INSERT INTO `sys_log` VALUES (939, 1, 'admin', '更新菜单', 25, 'com.bootdo.system.controller.MenuController.update()', NULL, '127.0.0.1', '2019-02-24 17:09:12');
+INSERT INTO `sys_log` VALUES (940, 1, 'admin', '添加菜单', 12, 'com.bootdo.system.controller.MenuController.add()', NULL, '127.0.0.1', '2019-02-24 17:09:32');
+INSERT INTO `sys_log` VALUES (941, 1, 'admin', '保存菜单', 10, 'com.bootdo.system.controller.MenuController.save()', NULL, '127.0.0.1', '2019-02-24 17:10:22');
+INSERT INTO `sys_log` VALUES (942, 1, 'admin', '添加菜单', 15, 'com.bootdo.system.controller.MenuController.add()', NULL, '127.0.0.1', '2019-02-24 17:10:48');
+INSERT INTO `sys_log` VALUES (943, 1, 'admin', '保存菜单', 8, 'com.bootdo.system.controller.MenuController.save()', NULL, '127.0.0.1', '2019-02-24 17:11:28');
+INSERT INTO `sys_log` VALUES (944, 1, 'admin', '添加菜单', 14, 'com.bootdo.system.controller.MenuController.add()', NULL, '127.0.0.1', '2019-02-24 17:11:43');
+INSERT INTO `sys_log` VALUES (945, 1, 'admin', '添加菜单', 13, 'com.bootdo.system.controller.MenuController.add()', NULL, '127.0.0.1', '2019-02-24 17:12:07');
+INSERT INTO `sys_log` VALUES (946, 1, 'admin', '保存菜单', 10, 'com.bootdo.system.controller.MenuController.save()', NULL, '127.0.0.1', '2019-02-24 17:12:58');
+INSERT INTO `sys_log` VALUES (947, 1, 'admin', '添加菜单', 10, 'com.bootdo.system.controller.MenuController.add()', NULL, '127.0.0.1', '2019-02-24 17:13:58');
+INSERT INTO `sys_log` VALUES (948, 1, 'admin', '保存菜单', 11, 'com.bootdo.system.controller.MenuController.save()', NULL, '127.0.0.1', '2019-02-24 17:14:42');
+INSERT INTO `sys_log` VALUES (949, 1, 'admin', '请求访问主页', 15, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 17:14:58');
+INSERT INTO `sys_log` VALUES (950, 1, 'admin', '编辑角色', 7, 'com.bootdo.system.controller.RoleController.edit()', NULL, '127.0.0.1', '2019-02-24 17:15:07');
+INSERT INTO `sys_log` VALUES (951, 1, 'admin', '更新角色', 31, 'com.bootdo.system.controller.RoleController.update()', NULL, '127.0.0.1', '2019-02-24 17:15:32');
+INSERT INTO `sys_log` VALUES (952, 1, 'admin', '登录', 30, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-24 17:17:01');
+INSERT INTO `sys_log` VALUES (953, 1, 'admin', '请求访问主页', 46, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 17:17:01');
+INSERT INTO `sys_log` VALUES (954, 1, 'admin', '请求访问主页', 21, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 17:18:33');
+INSERT INTO `sys_log` VALUES (955, 1, 'admin', '请求访问主页', 49, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 17:29:24');
+INSERT INTO `sys_log` VALUES (956, 1, 'admin', '请求访问主页', 16, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 17:30:31');
+INSERT INTO `sys_log` VALUES (957, 1, 'admin', '请求访问主页', 19, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-24 17:31:01');
+INSERT INTO `sys_log` VALUES (958, -1, '获取用户信息为空', '登录', 7, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:43:13');
+INSERT INTO `sys_log` VALUES (959, -1, '获取用户信息为空', '登录', 1, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:43:13');
+INSERT INTO `sys_log` VALUES (960, 1, 'admin', '登录', 36, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:45:33');
+INSERT INTO `sys_log` VALUES (961, 1, 'admin', '请求访问主页', 46, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 13:45:33');
+INSERT INTO `sys_log` VALUES (962, 1, 'admin', '游客登录', 3157, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:46:33');
+INSERT INTO `sys_log` VALUES (963, 1, 'admin', '游客登录', 7421, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:47:00');
+INSERT INTO `sys_log` VALUES (964, 1, 'admin', '游客登录', 17817, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:47:42');
+INSERT INTO `sys_log` VALUES (965, 1, 'admin', '登录', 14, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:48:47');
+INSERT INTO `sys_log` VALUES (966, 1, 'admin', '请求访问主页', 41, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 13:48:47');
+INSERT INTO `sys_log` VALUES (967, -1, '获取用户信息为空', '游客登录', 8, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:51:00');
+INSERT INTO `sys_log` VALUES (968, -1, '获取用户信息为空', '游客登录', 30, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:56:39');
+INSERT INTO `sys_log` VALUES (969, -1, '获取用户信息为空', '游客登录', 29, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 13:57:57');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -1252,7 +1365,7 @@ CREATE TABLE `sys_menu`  (
   `gmt_create` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `gmt_modified` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 130 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单管理' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 134 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单管理' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_menu
@@ -1260,7 +1373,7 @@ CREATE TABLE `sys_menu`  (
 INSERT INTO `sys_menu` VALUES (1, 0, '基础管理', '', '', 0, 'fa fa-bars', 0, '2017-08-09 22:49:47', NULL);
 INSERT INTO `sys_menu` VALUES (2, 3, '系统菜单', 'sys/menu/', 'sys:menu:menu', 1, 'fa fa-th-list', 2, '2017-08-09 22:55:15', NULL);
 INSERT INTO `sys_menu` VALUES (3, 0, '系统管理', NULL, NULL, 0, 'fa fa-desktop', 1, '2017-08-09 23:06:55', '2017-08-14 14:13:43');
-INSERT INTO `sys_menu` VALUES (6, 3, '用户管理', 'sys/user/', 'sys:user:user', 1, 'fa fa-user', 0, '2017-08-10 14:12:11', NULL);
+INSERT INTO `sys_menu` VALUES (6, 3, '管理员管理', 'sys/user/', 'sys:user:user', 1, 'fa fa-user', 0, '2017-08-10 14:12:11', NULL);
 INSERT INTO `sys_menu` VALUES (7, 3, '角色管理', 'sys/role', 'sys:role:role', 1, 'fa fa-paw', 1, '2017-08-10 14:13:19', NULL);
 INSERT INTO `sys_menu` VALUES (12, 6, '新增', '', 'sys:user:add', 2, '', 0, '2017-08-14 10:51:35', NULL);
 INSERT INTO `sys_menu` VALUES (13, 6, '编辑', '', 'sys:user:edit', 2, '', 0, '2017-08-14 10:52:06', NULL);
@@ -1340,6 +1453,10 @@ INSERT INTO `sys_menu` VALUES (126, 106, '用户预约课程', '/system/experien
 INSERT INTO `sys_menu` VALUES (127, 126, '增加', '/system/experience/add', 'system:experience:add', 2, '', 1, NULL, NULL);
 INSERT INTO `sys_menu` VALUES (128, 126, '编辑', '/system/experience/edit', 'system:experience:edit', 2, '', 2, NULL, NULL);
 INSERT INTO `sys_menu` VALUES (129, 126, '删除', '/system/experience/remove', 'system:experience:remove', 2, '', 3, NULL, NULL);
+INSERT INTO `sys_menu` VALUES (130, 3, '游客管理', '/system/touristUser', 'system:touristUser:touristUser', 1, '', 7, NULL, NULL);
+INSERT INTO `sys_menu` VALUES (131, 130, '增加', '/system/touristUser/add', 'system:touristUser:add', 2, '', 1, NULL, NULL);
+INSERT INTO `sys_menu` VALUES (132, 130, '编辑', '/system/touristUser/edit', 'system:touristUser:edit', 2, '', 2, NULL, NULL);
+INSERT INTO `sys_menu` VALUES (133, 130, '删除', '/system/touristUser/remove', 'system:touristUser:remove', 2, '', 3, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -1371,7 +1488,7 @@ CREATE TABLE `sys_role_menu`  (
   `role_id` bigint(20) NULL DEFAULT NULL COMMENT '角色ID',
   `menu_id` bigint(20) NULL DEFAULT NULL COMMENT '菜单ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3815 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色与菜单对应关系' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3923 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色与菜单对应关系' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_role_menu
@@ -1600,57 +1717,62 @@ INSERT INTO `sys_role_menu` VALUES (3523, 59, 118);
 INSERT INTO `sys_role_menu` VALUES (3524, 59, 117);
 INSERT INTO `sys_role_menu` VALUES (3525, 59, 3);
 INSERT INTO `sys_role_menu` VALUES (3526, 59, -1);
-INSERT INTO `sys_role_menu` VALUES (3764, 1, 129);
-INSERT INTO `sys_role_menu` VALUES (3765, 1, 128);
-INSERT INTO `sys_role_menu` VALUES (3766, 1, 127);
-INSERT INTO `sys_role_menu` VALUES (3767, 1, 122);
-INSERT INTO `sys_role_menu` VALUES (3768, 1, 121);
-INSERT INTO `sys_role_menu` VALUES (3769, 1, 120);
-INSERT INTO `sys_role_menu` VALUES (3770, 1, 125);
-INSERT INTO `sys_role_menu` VALUES (3771, 1, 124);
-INSERT INTO `sys_role_menu` VALUES (3772, 1, 123);
-INSERT INTO `sys_role_menu` VALUES (3773, 1, 72);
-INSERT INTO `sys_role_menu` VALUES (3774, 1, 119);
-INSERT INTO `sys_role_menu` VALUES (3775, 1, 118);
-INSERT INTO `sys_role_menu` VALUES (3776, 1, 117);
-INSERT INTO `sys_role_menu` VALUES (3777, 1, 115);
-INSERT INTO `sys_role_menu` VALUES (3778, 1, 114);
-INSERT INTO `sys_role_menu` VALUES (3779, 1, 113);
-INSERT INTO `sys_role_menu` VALUES (3780, 1, 62);
-INSERT INTO `sys_role_menu` VALUES (3781, 1, 56);
-INSERT INTO `sys_role_menu` VALUES (3782, 1, 55);
-INSERT INTO `sys_role_menu` VALUES (3783, 1, 15);
-INSERT INTO `sys_role_menu` VALUES (3784, 1, 26);
-INSERT INTO `sys_role_menu` VALUES (3785, 1, 25);
-INSERT INTO `sys_role_menu` VALUES (3786, 1, 24);
-INSERT INTO `sys_role_menu` VALUES (3787, 1, 14);
-INSERT INTO `sys_role_menu` VALUES (3788, 1, 13);
-INSERT INTO `sys_role_menu` VALUES (3789, 1, 12);
-INSERT INTO `sys_role_menu` VALUES (3790, 1, 61);
-INSERT INTO `sys_role_menu` VALUES (3791, 1, 22);
-INSERT INTO `sys_role_menu` VALUES (3792, 1, 21);
-INSERT INTO `sys_role_menu` VALUES (3793, 1, 20);
-INSERT INTO `sys_role_menu` VALUES (3794, 1, 71);
-INSERT INTO `sys_role_menu` VALUES (3795, 1, 126);
-INSERT INTO `sys_role_menu` VALUES (3796, 1, 108);
-INSERT INTO `sys_role_menu` VALUES (3797, 1, 107);
-INSERT INTO `sys_role_menu` VALUES (3798, 1, 106);
-INSERT INTO `sys_role_menu` VALUES (3799, 1, 116);
-INSERT INTO `sys_role_menu` VALUES (3800, 1, 112);
-INSERT INTO `sys_role_menu` VALUES (3801, 1, 7);
-INSERT INTO `sys_role_menu` VALUES (3802, 1, 6);
-INSERT INTO `sys_role_menu` VALUES (3803, 1, 2);
-INSERT INTO `sys_role_menu` VALUES (3804, 1, 49);
-INSERT INTO `sys_role_menu` VALUES (3805, 1, 60);
-INSERT INTO `sys_role_menu` VALUES (3806, 1, 59);
-INSERT INTO `sys_role_menu` VALUES (3807, 1, 58);
-INSERT INTO `sys_role_menu` VALUES (3808, 1, 51);
-INSERT INTO `sys_role_menu` VALUES (3809, 1, 68);
-INSERT INTO `sys_role_menu` VALUES (3810, 1, 50);
-INSERT INTO `sys_role_menu` VALUES (3811, 1, -1);
-INSERT INTO `sys_role_menu` VALUES (3812, 1, 77);
-INSERT INTO `sys_role_menu` VALUES (3813, 1, 3);
-INSERT INTO `sys_role_menu` VALUES (3814, 1, 1);
+INSERT INTO `sys_role_menu` VALUES (3867, 1, 129);
+INSERT INTO `sys_role_menu` VALUES (3868, 1, 128);
+INSERT INTO `sys_role_menu` VALUES (3869, 1, 127);
+INSERT INTO `sys_role_menu` VALUES (3870, 1, 122);
+INSERT INTO `sys_role_menu` VALUES (3871, 1, 121);
+INSERT INTO `sys_role_menu` VALUES (3872, 1, 120);
+INSERT INTO `sys_role_menu` VALUES (3873, 1, 125);
+INSERT INTO `sys_role_menu` VALUES (3874, 1, 124);
+INSERT INTO `sys_role_menu` VALUES (3875, 1, 123);
+INSERT INTO `sys_role_menu` VALUES (3876, 1, 72);
+INSERT INTO `sys_role_menu` VALUES (3877, 1, 48);
+INSERT INTO `sys_role_menu` VALUES (3878, 1, 68);
+INSERT INTO `sys_role_menu` VALUES (3879, 1, 60);
+INSERT INTO `sys_role_menu` VALUES (3880, 1, 59);
+INSERT INTO `sys_role_menu` VALUES (3881, 1, 58);
+INSERT INTO `sys_role_menu` VALUES (3882, 1, 51);
+INSERT INTO `sys_role_menu` VALUES (3883, 1, 119);
+INSERT INTO `sys_role_menu` VALUES (3884, 1, 118);
+INSERT INTO `sys_role_menu` VALUES (3885, 1, 117);
+INSERT INTO `sys_role_menu` VALUES (3886, 1, 115);
+INSERT INTO `sys_role_menu` VALUES (3887, 1, 114);
+INSERT INTO `sys_role_menu` VALUES (3888, 1, 113);
+INSERT INTO `sys_role_menu` VALUES (3889, 1, 62);
+INSERT INTO `sys_role_menu` VALUES (3890, 1, 56);
+INSERT INTO `sys_role_menu` VALUES (3891, 1, 55);
+INSERT INTO `sys_role_menu` VALUES (3892, 1, 15);
+INSERT INTO `sys_role_menu` VALUES (3893, 1, 26);
+INSERT INTO `sys_role_menu` VALUES (3894, 1, 25);
+INSERT INTO `sys_role_menu` VALUES (3895, 1, 24);
+INSERT INTO `sys_role_menu` VALUES (3896, 1, 14);
+INSERT INTO `sys_role_menu` VALUES (3897, 1, 13);
+INSERT INTO `sys_role_menu` VALUES (3898, 1, 12);
+INSERT INTO `sys_role_menu` VALUES (3899, 1, 61);
+INSERT INTO `sys_role_menu` VALUES (3900, 1, 22);
+INSERT INTO `sys_role_menu` VALUES (3901, 1, 21);
+INSERT INTO `sys_role_menu` VALUES (3902, 1, 20);
+INSERT INTO `sys_role_menu` VALUES (3903, 1, 71);
+INSERT INTO `sys_role_menu` VALUES (3904, 1, 126);
+INSERT INTO `sys_role_menu` VALUES (3905, 1, 108);
+INSERT INTO `sys_role_menu` VALUES (3906, 1, 107);
+INSERT INTO `sys_role_menu` VALUES (3907, 1, 106);
+INSERT INTO `sys_role_menu` VALUES (3908, 1, 50);
+INSERT INTO `sys_role_menu` VALUES (3909, 1, 49);
+INSERT INTO `sys_role_menu` VALUES (3910, 1, 116);
+INSERT INTO `sys_role_menu` VALUES (3911, 1, 112);
+INSERT INTO `sys_role_menu` VALUES (3912, 1, 7);
+INSERT INTO `sys_role_menu` VALUES (3913, 1, 6);
+INSERT INTO `sys_role_menu` VALUES (3914, 1, 2);
+INSERT INTO `sys_role_menu` VALUES (3915, 1, 130);
+INSERT INTO `sys_role_menu` VALUES (3916, 1, 133);
+INSERT INTO `sys_role_menu` VALUES (3917, 1, 132);
+INSERT INTO `sys_role_menu` VALUES (3918, 1, 131);
+INSERT INTO `sys_role_menu` VALUES (3919, 1, -1);
+INSERT INTO `sys_role_menu` VALUES (3920, 1, 77);
+INSERT INTO `sys_role_menu` VALUES (3921, 1, 3);
+INSERT INTO `sys_role_menu` VALUES (3922, 1, 1);
 
 -- ----------------------------
 -- Table structure for sys_task
@@ -1797,6 +1919,27 @@ CREATE TABLE `teacher`  (
 INSERT INTO `teacher` VALUES (2, 'test', 123123123, '9234234@qq.com', '2019-02-20 15:37:35', '2019-02-20 15:37:43');
 
 -- ----------------------------
+-- Table structure for tourist_user
+-- ----------------------------
+DROP TABLE IF EXISTS `tourist_user`;
+CREATE TABLE `tourist_user`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名',
+  `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
+  `phone` int(20) NULL DEFAULT NULL COMMENT '手机号',
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `head_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像url',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tourist_user
+-- ----------------------------
+INSERT INTO `tourist_user` VALUES (2, '111111', '58526253d2d8244efb048c1507b0f14f', 234234, 'dgdfg', '2019-02-25 13:46:05', '2019-02-25 13:46:05', '/files/4b4b7e4f-d62d-44db-9bf3-ac73576ba4ec.jpg');
+
+-- ----------------------------
 -- Table structure for train_course
 -- ----------------------------
 DROP TABLE IF EXISTS `train_course`;
@@ -1814,7 +1957,7 @@ CREATE TABLE `train_course`  (
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of train_course
@@ -1822,6 +1965,7 @@ CREATE TABLE `train_course`  (
 INSERT INTO `train_course` VALUES (4, 2, '1', 1, 2, 1.00, 1.00, b'1', '/files/c78006a9-85ec-4ac8-9c07-eb234978335f.jpg', '', '2019-02-20 22:43:32', '2019-02-20 22:43:32');
 INSERT INTO `train_course` VALUES (5, 2, '1', 1, 2, 1.00, 1.00, b'1', '/files/9c717b48-a9eb-4482-8ab1-b3e1902a60ca.jpg', '', '2019-02-20 22:45:10', '2019-02-20 22:45:10');
 INSERT INTO `train_course` VALUES (6, 2, '11', 1, 2, 1.00, 1.00, b'1', '/files/92e1c9fb-1baa-45b8-8a78-d1f30d0ce320.jpg', '/files/4063387b-85b4-4bad-9a05-0cb30d05a397.jpg', '2019-02-20 22:51:06', '2019-02-20 22:51:06');
+INSERT INTO `train_course` VALUES (7, 2, '1', 1, 2, 1.00, 1.00, b'1', '/files/eb98a4c9-1cd8-4b4c-918a-b2cf8eb1b9b4.jpg', '/files/0eab7e13-cbac-4557-9ae0-23cded880595.mp4', '2019-02-22 11:09:05', '2019-02-22 11:09:05');
 
 -- ----------------------------
 -- Table structure for train_course_cate
@@ -1839,22 +1983,6 @@ CREATE TABLE `train_course_cate`  (
 -- Records of train_course_cate
 -- ----------------------------
 INSERT INTO `train_course_cate` VALUES (2, 'test种类', '2019-02-20 16:46:29', '2019-02-20 16:46:29');
-
--- ----------------------------
--- Table structure for user
--- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user`  (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名',
-  `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
-  `phone` int(20) NULL DEFAULT NULL COMMENT '手机号',
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
-  `create_time` datetime(0) NULL DEFAULT NULL,
-  `update_time` datetime(0) NULL DEFAULT NULL,
-  `head_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像url',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for user_comment
