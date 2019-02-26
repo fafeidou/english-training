@@ -29,7 +29,7 @@
             <div class="col-md-12">
                 <div class="pull-left">
                     <span class="info">
-                        <span th:if="${session.touristUser}" th:text="${session.touristUser.username}"></span>
+                        <span th:if="${session.touristUser}" th:text="${session.touristUser.username}"><img th:src="@${session.touristUser.headUrl}" ></span>
                         <span th:if="${session.touristUser == null}">欢迎光临本小站</span>
                     </span>
                 </div>
@@ -37,7 +37,7 @@
                     <span th:if="${session.touristUser == null}">
                         <span class="info"><a href="tourist/login" class="tourist/login" rel="nofollow">登录</a></span>
                         &nbsp;
-                        <span class="info"><a href="register.jsp" class="top-register" el="nofollow">免费注册</a></span>
+                        <span class="info"><a href="tourist/register" class="top-register" el="nofollow">免费注册</a></span>
                         &nbsp;
                     <span class="info"><a href="/login" class="login" el="nofollow">管理员登录</a></span>
                     </span>

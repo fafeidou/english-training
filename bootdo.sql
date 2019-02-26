@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 25/02/2019 16:52:47
+ Date: 26/02/2019 18:59:22
 */
 
 SET NAMES utf8mb4;
@@ -996,7 +996,7 @@ CREATE TABLE `sys_log`  (
   `ip` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP地址',
   `gmt_create` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 987 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 995 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_log
@@ -1379,6 +1379,14 @@ INSERT INTO `sys_log` VALUES (983, 1, 'admin', 'error', NULL, 'http://localhost/
 INSERT INTO `sys_log` VALUES (984, 1, 'admin', '请求访问主页', 95, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 16:39:51');
 INSERT INTO `sys_log` VALUES (985, 1, 'admin', '登录', 17, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-25 16:47:09');
 INSERT INTO `sys_log` VALUES (986, 1, 'admin', '请求访问主页', 22, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-02-25 16:47:09');
+INSERT INTO `sys_log` VALUES (987, -1, '获取用户信息为空', '游客登录', 34, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-26 18:21:04');
+INSERT INTO `sys_log` VALUES (988, -1, '获取用户信息为空', '游客登录', 22, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-02-26 18:22:58');
+INSERT INTO `sys_log` VALUES (989, -1, '获取用户信息为空', '游客登录', 31, 'com.bootdo.front.TouristLoginController.register()', NULL, '127.0.0.1', '2019-02-26 18:47:50');
+INSERT INTO `sys_log` VALUES (990, -1, '获取用户信息为空', '游客登录', 9, 'com.bootdo.front.TouristLoginController.register()', NULL, '127.0.0.1', '2019-02-26 18:48:31');
+INSERT INTO `sys_log` VALUES (991, -1, '获取用户信息为空', '游客登录', 7, 'com.bootdo.front.TouristLoginController.register()', NULL, '127.0.0.1', '2019-02-26 18:54:00');
+INSERT INTO `sys_log` VALUES (992, NULL, NULL, 'error', NULL, 'http://localhost/tourist/register', 'java.lang.NumberFormatException: For input string: \"123123123123123\"', NULL, '2019-02-26 18:54:03');
+INSERT INTO `sys_log` VALUES (993, NULL, NULL, 'error', NULL, 'http://localhost/tourist/register', 'org.springframework.dao.DataIntegrityViolationException: \r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column \'phone\' at row 1\r\n### The error may involve com.bootdo.system.dao.TouristUserDao.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into tourist_user   (    `username`,     `password`,     `phone`,     `email`,     `create_time`,     `update_time`,     `head_url`   )   values   (    ?,     ?,     ?,     ?,     ?,     ?,     ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column \'phone\' at row 1\n; ]; Data truncation: Out of range value for column \'phone\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column \'phone\' at row 1', NULL, '2019-02-26 18:58:11');
+INSERT INTO `sys_log` VALUES (994, -1, '获取用户信息为空', '游客登录', 10, 'com.bootdo.front.TouristLoginController.register()', NULL, '127.0.0.1', '2019-02-26 18:58:39');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -1957,18 +1965,20 @@ CREATE TABLE `tourist_user`  (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名',
   `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
-  `phone` int(20) NULL DEFAULT NULL COMMENT '手机号',
+  `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '手机号',
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `head_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像url',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tourist_user
 -- ----------------------------
-INSERT INTO `tourist_user` VALUES (2, '111111', '58526253d2d8244efb048c1507b0f14f', 234234, 'dgdfg', '2019-02-25 13:46:05', '2019-02-25 13:46:05', '/files/4b4b7e4f-d62d-44db-9bf3-ac73576ba4ec.jpg');
+INSERT INTO `tourist_user` VALUES (2, '111111', '58526253d2d8244efb048c1507b0f14f', '234234', 'dgdfg', '2019-02-25 13:46:05', '2019-02-25 13:46:05', '/files/4b4b7e4f-d62d-44db-9bf3-ac73576ba4ec.jpg');
+INSERT INTO `tourist_user` VALUES (4, '123123', '123', '123', '123', '2019-02-26 18:48:31', '2019-02-26 18:48:31', NULL);
+INSERT INTO `tourist_user` VALUES (5, '31213123', '123123213', '12312312311', '123@qq.com', '2019-02-26 18:58:39', '2019-02-26 18:58:39', NULL);
 
 -- ----------------------------
 -- Table structure for train_course
