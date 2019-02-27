@@ -2,7 +2,6 @@ package com.bootdo.activiti.dao;
 
 import com.bootdo.activiti.domain.SalaryDO;
 import org.apache.ibatis.annotations.Mapper;
-
 import java.util.List;
 import java.util.Map;
 
