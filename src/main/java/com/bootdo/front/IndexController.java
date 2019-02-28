@@ -1,7 +1,14 @@
 package com.bootdo.front;
 
+import com.bootdo.system.domain.NavigationDO;
+import com.bootdo.system.service.NavigationService;
+import com.google.common.collect.Maps;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 /**
  * COPYRIGHT © 2005-2018 CHARLESKEITH ALL RIGHTS RESERVED.
@@ -11,8 +18,13 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class IndexController {
+    @Autowired
+    private NavigationService navigationService;
+
     @GetMapping("/front")
-    public String index() {
+    public String index(ModelMap modelMap) {
+        List<NavigationDO> navigations = navigationService.list(Maps.newHashMap());
+        modelMap.addAttribute("navigations", navigations);
         return "front/index";
     }
 
