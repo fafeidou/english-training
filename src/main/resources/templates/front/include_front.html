@@ -35,11 +35,13 @@
                 </div>
                 <div class="social_top pull-right">
                     <span th:if="${session.touristUser == null}">
-                        <span class="info"><a href="tourist/login" class="tourist/login" rel="nofollow">登录</a></span>
+
+                        <span class="info"><a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/login'} ">登录</a>
+                        </span>
                         &nbsp;
-                        <span class="info"><a href="tourist/register" class="top-register" el="nofollow">免费注册</a></span>
+                        <span class="info"><a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/register'} ">免费注册</a></span>
                         &nbsp;
-                    <span class="info"><a href="/login" class="login" el="nofollow">管理员登录</a></span>
+                    <span class="info"><a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/login'} ">管理员登录</a></span>
                     </span>
                     <span th:if="${session.touristUser}">
                          <span class="info"><a href="tourist/loginOut" class="login" el="nofollow">登出</a></span>
