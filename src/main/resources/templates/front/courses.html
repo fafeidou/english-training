@@ -74,12 +74,13 @@
                         <img th:src="${row.url}" alt="Edua" class="img-responsive border-radius">
                         <div class="overlay border_radius">
                             <a class="btn_common yellow border_radius btn-cart"
-                               th:href="@{'/courses/details?courseId='+${row.id}}">add to cart</a>
+                               th:href="@{'/courses/details?courseId='+${row.id}}">detail</a>
                         </div>
                     </div>
                     <div class="shop_content text-center">
-                        课程名称:<h4 th:text="${row.trainCorseCateName}"><a href="/courses/details" class="title_link"></a>
-                    </h4>
+                        <span>课程名称:
+                        <h4 th:text="${row.trainCorseCateName}"><a href="/courses/details" class="title_link"></a>
+                    </h4></span>
                         教师姓名:<p th:text="${row.teacherName}"></p>
                         价格:<h4 class="price_product" th:text="${row.price}"></h4>
                     </div>

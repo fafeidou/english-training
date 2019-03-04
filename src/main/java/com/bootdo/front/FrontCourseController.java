@@ -2,13 +2,9 @@ package com.bootdo.front;
 
 import com.bootdo.common.utils.PageUtils;
 import com.bootdo.common.utils.Query;
-import com.bootdo.system.domain.CourseCateDO;
-import com.bootdo.system.domain.CourseDO;
-import com.bootdo.system.domain.TeacherDO;
-import com.bootdo.system.service.CourseCateService;
-import com.bootdo.system.service.CourseService;
-import com.bootdo.system.service.TeacherService;
-import com.google.common.collect.Maps;
+import com.bootdo.system.domain.*;
+import com.bootdo.system.service.*;
+import com.google.common.collect.Lists;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +12,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * COPYRIGHT © 2005-2018 CHARLESKEITH ALL RIGHTS RESERVED.
@@ -33,6 +32,10 @@ public class FrontCourseController {
     private CourseService courseService;
     @Autowired
     private TeacherService teacherService;
+    @Autowired
+    private CommentService commentService;
+    @Autowired
+    private TouristUserService touristUserService;
 
     @GetMapping("/courses")
     public String courses(@RequestParam Map<String, Object> params, ModelMap modelMap) {
@@ -70,7 +73,39 @@ public class FrontCourseController {
         if (courseCateDO != null) {
             courseDO.setTrainCorseCateName(courseCateDO.getName());
         }
+        //推荐课程 查出种类下的点击数最多前十条不包括当前数据
+        Map<String, Object> map = new HashMap<>();
+        map.put("trainCorseId", courseDO.getTrainCorseId());
+        map.put("limit", 10);
+        map.put("sort", "click_count");
+        map.put("order", "desc");
+        List<CourseDO> recommendList = courseService.list(map);
+        if (CollectionUtils.isNotEmpty(recommendList)) {
+            recommendList = recommendList.stream().filter(i -> !i.getId().equals(courseDO.getId())).collect(Collectors.toList());
+            recommendList.forEach(i -> {
+                TeacherDO teacherDO1 = teacherService.get(i.getTeacherId());
+                i.setTeacherName(teacherDO1.getUsername());
+            });
+            modelMap.put("recommendList", recommendList);
+        }
+
         modelMap.put("courseDO", courseDO);
+        //查出所有的评论
+        Map<String, Object> commentMap = new HashMap<>();
+        commentMap.put("course_id", courseDO.getId());
+        commentMap.put("is_show", true);
+        List<CommentDO> commentDOList = commentService.list(commentMap);
+        if (CollectionUtils.isNotEmpty(commentDOList)) {
+            commentDOList.forEach(i -> {
+                //查出用户
+                TouristUserDO touristUserDO = touristUserService.get(i.getUserId());
+                i.setUserName(Optional.of(touristUserDO.getUsername()).orElse(""));
+            });
+        } else {
+            commentDOList = Lists.newArrayList();
+        }
+
+        modelMap.put("commentDOList", commentDOList);
         return "front/course_detail";
     }
 }

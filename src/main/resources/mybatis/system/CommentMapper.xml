@@ -4,13 +4,14 @@
 <mapper namespace="com.bootdo.system.dao.CommentDao">
 
 	<select id="get" resultType="com.bootdo.system.domain.CommentDO">
-		select `id`,`user_id`,`comment`,`is_show`,`create_time`,`update_time` from user_comment where id = #{value}
+		select `id`,`course_id`,`user_id`,`comment`,`is_show`,`create_time`,`update_time` from user_comment where id = #{value}
 	</select>
 
 	<select id="list" resultType="com.bootdo.system.domain.CommentDO">
-		select `id`,`user_id`,`comment`,`is_show`,`create_time`,`update_time` from user_comment
+		select `id`,`course_id`,`user_id`,`comment`,`is_show`,`create_time`,`update_time` from user_comment
         <where>  
 		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="courseId != null and courseId != ''"> and course_id = #{courseId} </if>
 		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
 		  		  <if test="comment != null and comment != ''"> and comment = #{comment} </if>
 		  		  <if test="isShow != null and isShow != ''"> and is_show = #{isShow} </if>
@@ -34,6 +35,7 @@
 		select count(*) from user_comment
 		 <where>  
 		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="courseId != null and courseId != ''"> and course_id = #{courseId} </if>
 		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
 		  		  <if test="comment != null and comment != ''"> and comment = #{comment} </if>
 		  		  <if test="isShow != null and isShow != ''"> and is_show = #{isShow} </if>
@@ -45,6 +47,7 @@
 	<insert id="save" parameterType="com.bootdo.system.domain.CommentDO" useGeneratedKeys="true" keyProperty="id">
 		insert into user_comment
 		(
+			`course_id`, 
 			`user_id`, 
 			`comment`, 
 			`is_show`, 
@@ -53,6 +56,7 @@
 		)
 		values
 		(
+			#{courseId}, 
 			#{userId}, 
 			#{comment}, 
 			#{isShow}, 
@@ -64,6 +68,7 @@
 	<update id="update" parameterType="com.bootdo.system.domain.CommentDO">
 		update user_comment 
 		<set>
+			<if test="courseId != null">`course_id` = #{courseId}, </if>
 			<if test="userId != null">`user_id` = #{userId}, </if>
 			<if test="comment != null">`comment` = #{comment}, </if>
 			<if test="isShow != null">`is_show` = #{isShow}, </if>

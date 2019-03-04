@@ -5,7 +5,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="images/logo-white.png" alt="logo"
+            <a class="navbar-brand" href="index.html"><img th:src="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + 'images/logo-white.png'}" alt="logo"
                                                            class="logo logo-display">
                 <img src="images/logo.png" class="logo logo-scrolled" alt="">
             </a>
