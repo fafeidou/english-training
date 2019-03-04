@@ -76,7 +76,8 @@ public class FrontCourseController {
         //推荐课程 查出种类下的点击数最多前十条不包括当前数据
         Map<String, Object> map = new HashMap<>();
         map.put("trainCorseId", courseDO.getTrainCorseId());
-        map.put("limit", 10);
+        map.put("offset", 0);
+        map.put("limit", 5);
         map.put("sort", "click_count");
         map.put("order", "desc");
         List<CourseDO> recommendList = courseService.list(map);

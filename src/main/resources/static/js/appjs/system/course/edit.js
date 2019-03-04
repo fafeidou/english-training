@@ -1,4 +1,8 @@
 $().ready(function() {
+	$('.summernote').summernote({
+		height:'220px',
+		lang : 'zh-CN'
+	});
 	validateRule();
 });
 
@@ -8,6 +12,8 @@ $.validator.setDefaults({
 	}
 });
 function update() {
+	var content_sn = $("#content_sn").code();
+	$("#detail").val(content_sn);
 	$.ajax({
 		cache : true,
 		type : "POST",

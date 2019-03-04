@@ -4,11 +4,11 @@
 <mapper namespace="com.bootdo.system.dao.CourseDao">
 
 	<select id="get" resultType="com.bootdo.system.domain.CourseDO">
-		select `id`,`train_corse_id`,`name`,`click_count`,`teacher_id`,`price`,`vip_price`,`is_free`,`url`,`video_url`,`create_time`,`update_time` from train_course where id = #{value}
+		select `id`,`train_corse_id`,`name`,`click_count`,`teacher_id`,`price`,`vip_price`,`is_free`,`url`,`detail`,`video_url`,`create_time`,`update_time` from train_course where id = #{value}
 	</select>
 
 	<select id="list" resultType="com.bootdo.system.domain.CourseDO">
-		select `id`,`train_corse_id`,`name`,`click_count`,`teacher_id`,`price`,`vip_price`,`is_free`,`url`,`video_url`,`create_time`,`update_time` from train_course
+		select `id`,`train_corse_id`,`name`,`click_count`,`teacher_id`,`price`,`vip_price`,`is_free`,`url`,`detail`,`video_url`,`create_time`,`update_time` from train_course
         <where>  
 		  		  <if test="id != null and id != ''"> and id = #{id} </if>
 		  		  <if test="trainCorseId != null and trainCorseId != ''"> and train_corse_id = #{trainCorseId} </if>
@@ -19,6 +19,7 @@
 		  		  <if test="vipPrice != null and vipPrice != ''"> and vip_price = #{vipPrice} </if>
 		  		  <if test="isFree != null and isFree != ''"> and is_free = #{isFree} </if>
 		  		  <if test="url != null and url != ''"> and url = #{url} </if>
+		  		  <if test="detail != null and detail != ''"> and detail = #{detail} </if>
 		  		  <if test="videoUrl != null and videoUrl != ''"> and video_url = #{videoUrl} </if>
 		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
 		  		  <if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
@@ -48,6 +49,7 @@
 		  		  <if test="vipPrice != null and vipPrice != ''"> and vip_price = #{vipPrice} </if>
 		  		  <if test="isFree != null and isFree != ''"> and is_free = #{isFree} </if>
 		  		  <if test="url != null and url != ''"> and url = #{url} </if>
+		  		  <if test="detail != null and detail != ''"> and detail = #{detail} </if>
 		  		  <if test="videoUrl != null and videoUrl != ''"> and video_url = #{videoUrl} </if>
 		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
 		  		  <if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
@@ -65,6 +67,7 @@
 			`vip_price`, 
 			`is_free`, 
 			`url`, 
+			`detail`, 
 			`video_url`, 
 			`create_time`, 
 			`update_time`
@@ -79,6 +82,7 @@
 			#{vipPrice}, 
 			#{isFree}, 
 			#{url}, 
+			#{detail}, 
 			#{videoUrl}, 
 			#{createTime}, 
 			#{updateTime}
@@ -96,6 +100,7 @@
 			<if test="vipPrice != null">`vip_price` = #{vipPrice}, </if>
 			<if test="isFree != null">`is_free` = #{isFree}, </if>
 			<if test="url != null">`url` = #{url}, </if>
+			<if test="detail != null">`detail` = #{detail}, </if>
 			<if test="videoUrl != null">`video_url` = #{videoUrl}, </if>
 			<if test="createTime != null">`create_time` = #{createTime}, </if>
 			<if test="updateTime != null">`update_time` = #{updateTime}</if>
