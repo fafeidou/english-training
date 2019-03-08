@@ -1,5 +1,7 @@
 package com.bootdo.system.domain;
 
+import org.springframework.data.annotation.Transient;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -28,6 +30,37 @@ public class TouristUserDO implements Serializable {
     private Date updateTime;
     //头像url
     private String headUrl;
+
+    @Transient
+    private String pwdOld;
+    @Transient
+    private String pwdNew;
+    @Transient
+    private String confirm_password;
+
+    public String getPwdOld() {
+        return pwdOld;
+    }
+
+    public void setPwdOld(String pwdOld) {
+        this.pwdOld = pwdOld;
+    }
+
+    public String getPwdNew() {
+        return pwdNew;
+    }
+
+    public void setPwdNew(String pwdNew) {
+        this.pwdNew = pwdNew;
+    }
+
+    public String getConfirm_password() {
+        return confirm_password;
+    }
+
+    public void setConfirm_password(String confirm_password) {
+        this.confirm_password = confirm_password;
+    }
 
     /**
      * 设置：

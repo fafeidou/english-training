@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 04/03/2019 16:15:07
+ Date: 08/03/2019 11:43:00
 */
 
 SET NAMES utf8mb4;
@@ -362,7 +362,7 @@ CREATE TABLE `sys_file`  (
   `url` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'URL地址',
   `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 211 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '文件上传' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 219 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '文件上传' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_file
@@ -440,6 +440,14 @@ INSERT INTO `sys_file` VALUES (207, 0, '/files/65ccb4f4-404d-41f7-8654-40f9c43ca
 INSERT INTO `sys_file` VALUES (208, 2, '/files/de73de96-597f-4787-bf13-810c94fa1628.mp4', '2019-03-04 15:12:13');
 INSERT INTO `sys_file` VALUES (209, 0, '/files/6f6b2965-9dc9-45e7-af4c-f357c6281c01.jpg', '2019-03-04 15:14:42');
 INSERT INTO `sys_file` VALUES (210, 2, '/files/b00f7b10-5cea-408d-a85b-041abc44af99.mp4', '2019-03-04 15:14:49');
+INSERT INTO `sys_file` VALUES (211, 0, '/files/457b5b6b-86bc-4b4b-9228-162511c1306c.jpg', '2019-03-08 11:29:40');
+INSERT INTO `sys_file` VALUES (212, 0, '/files/c2fbfc45-8376-4510-a4c8-5bac2f0af713.jpg', '2019-03-08 11:29:54');
+INSERT INTO `sys_file` VALUES (213, 0, '/files/ae94f9d2-1949-4073-bcf5-d896a6cf3a95.jpg', '2019-03-08 11:30:31');
+INSERT INTO `sys_file` VALUES (214, 0, '/files/e7d95d10-b7c3-4b1c-8acf-7b8632d7d6f8.jpg', '2019-03-08 11:33:10');
+INSERT INTO `sys_file` VALUES (215, 0, '/files/bf6f0f9f-877d-4df8-ad16-4a14ebd22a2b.jpg', '2019-03-08 11:33:31');
+INSERT INTO `sys_file` VALUES (216, 0, '/files/4b48c8c9-f866-4bfa-a1a1-f30c800b30d9.jpg', '2019-03-08 11:40:02');
+INSERT INTO `sys_file` VALUES (217, 0, '/files/fee8b95d-bff7-4092-82e6-bd54f8907706.jpg', '2019-03-08 11:40:19');
+INSERT INTO `sys_file` VALUES (218, 0, '/files/7c11f67e-d90a-4b31-8b24-8282366e3e76.jpg', '2019-03-08 11:42:32');
 
 -- ----------------------------
 -- Table structure for sys_log
@@ -456,7 +464,7 @@ CREATE TABLE `sys_log`  (
   `ip` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP地址',
   `gmt_create` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1057 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1119 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统日志' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_log
@@ -909,6 +917,68 @@ INSERT INTO `sys_log` VALUES (1053, 1, 'admin', '请求访问主页', 16, 'com.b
 INSERT INTO `sys_log` VALUES (1054, 1, 'admin', '请求访问主页', 12, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-03-04 15:52:23');
 INSERT INTO `sys_log` VALUES (1055, 1, 'admin', '登录', 77, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-04 15:58:31');
 INSERT INTO `sys_log` VALUES (1056, 1, 'admin', '请求访问主页', 61, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-03-04 15:58:32');
+INSERT INTO `sys_log` VALUES (1057, 1, 'admin', '登录', 79, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-05 09:58:22');
+INSERT INTO `sys_log` VALUES (1058, 1, 'admin', '请求访问主页', 57, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-03-05 09:58:22');
+INSERT INTO `sys_log` VALUES (1059, -1, '获取用户信息为空', '游客登录', 73, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 14:50:45');
+INSERT INTO `sys_log` VALUES (1060, -1, '获取用户信息为空', '游客登录', 0, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 14:51:19');
+INSERT INTO `sys_log` VALUES (1061, -1, '获取用户信息为空', '游客登录', 4, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 14:51:23');
+INSERT INTO `sys_log` VALUES (1062, 1, 'admin', '登录', 79, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 14:53:36');
+INSERT INTO `sys_log` VALUES (1063, 1, 'admin', '请求访问主页', 157, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-03-07 14:53:36');
+INSERT INTO `sys_log` VALUES (1064, 1, 'admin', '游客登录', 29, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:03:48');
+INSERT INTO `sys_log` VALUES (1065, -1, '获取用户信息为空', '游客登录', 64, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:08:46');
+INSERT INTO `sys_log` VALUES (1066, 1, 'admin', '登录', 70, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:10:42');
+INSERT INTO `sys_log` VALUES (1067, 1, 'admin', '请求访问主页', 55, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-03-07 15:10:42');
+INSERT INTO `sys_log` VALUES (1068, 1, 'admin', '登录', 17, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:14:47');
+INSERT INTO `sys_log` VALUES (1069, 1, 'admin', '请求访问主页', 33, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-03-07 15:14:47');
+INSERT INTO `sys_log` VALUES (1070, 1, 'admin', '请求访问主页', 141, 'com.bootdo.system.controller.LoginController.index()', NULL, '127.0.0.1', '2019-03-07 15:18:30');
+INSERT INTO `sys_log` VALUES (1071, 1, 'admin', '游客登录', 30, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:20:39');
+INSERT INTO `sys_log` VALUES (1072, -1, '获取用户信息为空', '游客登录', 72, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:52:10');
+INSERT INTO `sys_log` VALUES (1073, -1, '获取用户信息为空', '登录', 75, 'com.bootdo.system.controller.LoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:53:37');
+INSERT INTO `sys_log` VALUES (1074, -1, '获取用户信息为空', '游客登录', 18, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:53:59');
+INSERT INTO `sys_log` VALUES (1075, -1, '获取用户信息为空', '游客登录', 64, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:55:13');
+INSERT INTO `sys_log` VALUES (1076, -1, '获取用户信息为空', '游客登录', 54, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:56:44');
+INSERT INTO `sys_log` VALUES (1077, -1, '获取用户信息为空', '游客登录', 5, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 15:57:41');
+INSERT INTO `sys_log` VALUES (1078, -1, '获取用户信息为空', '游客登录', 97, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 19:20:02');
+INSERT INTO `sys_log` VALUES (1079, -1, '获取用户信息为空', '游客登录', 140, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 19:22:27');
+INSERT INTO `sys_log` VALUES (1080, -1, '获取用户信息为空', '游客登录', 59, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 19:30:20');
+INSERT INTO `sys_log` VALUES (1081, -1, '获取用户信息为空', '游客登录', 5, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 19:32:07');
+INSERT INTO `sys_log` VALUES (1082, -1, '获取用户信息为空', '游客登录', 61, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-07 19:35:09');
+INSERT INTO `sys_log` VALUES (1083, -1, '获取用户信息为空', '游客登录', 40, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 09:07:11');
+INSERT INTO `sys_log` VALUES (1084, -1, '获取用户信息为空', '游客登录', 178, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 09:43:29');
+INSERT INTO `sys_log` VALUES (1085, -1, '获取用户信息为空', '游客登录', 70, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 09:51:08');
+INSERT INTO `sys_log` VALUES (1086, -1, '获取用户信息为空', '游客登录', 123, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:01:11');
+INSERT INTO `sys_log` VALUES (1087, -1, '获取用户信息为空', '游客登录', 77, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:11:25');
+INSERT INTO `sys_log` VALUES (1088, -1, '获取用户信息为空', '游客登录', 7, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:13:05');
+INSERT INTO `sys_log` VALUES (1089, -1, '获取用户信息为空', '游客登录', 76, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:32:39');
+INSERT INTO `sys_log` VALUES (1090, -1, '获取用户信息为空', '游客登录', 92, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:35:48');
+INSERT INTO `sys_log` VALUES (1091, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'java.lang.NullPointerException', NULL, '2019-03-08 10:36:08');
+INSERT INTO `sys_log` VALUES (1092, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'java.lang.NullPointerException', NULL, '2019-03-08 10:36:49');
+INSERT INTO `sys_log` VALUES (1093, -1, '获取用户信息为空', '游客登录', 64, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:38:08');
+INSERT INTO `sys_log` VALUES (1094, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:38:23');
+INSERT INTO `sys_log` VALUES (1095, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:39:32');
+INSERT INTO `sys_log` VALUES (1096, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:40:38');
+INSERT INTO `sys_log` VALUES (1097, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:41:17');
+INSERT INTO `sys_log` VALUES (1098, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:41:50');
+INSERT INTO `sys_log` VALUES (1099, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:42:00');
+INSERT INTO `sys_log` VALUES (1100, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:42:14');
+INSERT INTO `sys_log` VALUES (1101, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:42:31');
+INSERT INTO `sys_log` VALUES (1102, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:42:42');
+INSERT INTO `sys_log` VALUES (1103, NULL, NULL, 'error', NULL, 'http://localhost/tourist/personal/resetPwd', 'org.springframework.jdbc.UncategorizedSQLException: \r\n### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\r\n### SQL: update tourist_user         where id = ?\r\n### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?\n; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :\'  \n		where id = ?\',expect SET, actual WHERE where : update tourist_user \n		  \n		where id = ?', NULL, '2019-03-08 10:43:37');
+INSERT INTO `sys_log` VALUES (1104, -1, '获取用户信息为空', '游客登录', 63, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:44:43');
+INSERT INTO `sys_log` VALUES (1105, -1, '获取用户信息为空', '游客登录', 3, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:45:48');
+INSERT INTO `sys_log` VALUES (1106, -1, '获取用户信息为空', '游客登录', 10, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:45:56');
+INSERT INTO `sys_log` VALUES (1107, -1, '获取用户信息为空', '游客登录', 27, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:45:57');
+INSERT INTO `sys_log` VALUES (1108, -1, '获取用户信息为空', '游客登录', 95, 'com.bootdo.front.TouristLoginController.register()', NULL, '127.0.0.1', '2019-03-08 10:48:38');
+INSERT INTO `sys_log` VALUES (1109, -1, '获取用户信息为空', '游客登录', 6, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:48:50');
+INSERT INTO `sys_log` VALUES (1110, -1, '获取用户信息为空', '游客登录', 16, 'com.bootdo.front.TouristLoginController.register()', NULL, '127.0.0.1', '2019-03-08 10:50:15');
+INSERT INTO `sys_log` VALUES (1111, -1, '获取用户信息为空', '游客登录', 35, 'com.bootdo.front.TouristLoginController.register()', NULL, '127.0.0.1', '2019-03-08 10:51:02');
+INSERT INTO `sys_log` VALUES (1112, -1, '获取用户信息为空', '游客登录', 7, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:51:12');
+INSERT INTO `sys_log` VALUES (1113, -1, '获取用户信息为空', '游客登录', 6, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 10:52:11');
+INSERT INTO `sys_log` VALUES (1114, -1, '获取用户信息为空', '游客登录', 189, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 11:27:24');
+INSERT INTO `sys_log` VALUES (1115, -1, '获取用户信息为空', '游客登录', 71, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 11:29:22');
+INSERT INTO `sys_log` VALUES (1116, -1, '获取用户信息为空', '游客登录', 94, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 11:32:57');
+INSERT INTO `sys_log` VALUES (1117, -1, '获取用户信息为空', '游客登录', 72, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 11:39:31');
+INSERT INTO `sys_log` VALUES (1118, -1, '获取用户信息为空', '游客登录', 72, 'com.bootdo.front.TouristLoginController.ajaxLogin()', NULL, '127.0.0.1', '2019-03-08 11:42:20');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -1501,14 +1571,12 @@ CREATE TABLE `tourist_user`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `head_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像url',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tourist_user
 -- ----------------------------
-INSERT INTO `tourist_user` VALUES (2, '111111', '58526253d2d8244efb048c1507b0f14f', '234234', 'dgdfg', '2019-02-25 13:46:05', '2019-02-25 13:46:05', '/files/4b4b7e4f-d62d-44db-9bf3-ac73576ba4ec.jpg');
-INSERT INTO `tourist_user` VALUES (4, '123123', '123', '123', '123', '2019-02-26 18:48:31', '2019-02-26 18:48:31', NULL);
-INSERT INTO `tourist_user` VALUES (5, '31213123', '123123213', '12312312311', '123@qq.com', '2019-02-26 18:58:39', '2019-02-26 18:58:39', NULL);
+INSERT INTO `tourist_user` VALUES (8, 'dev', '52b1ef80ba0b80a617e35117374b86e3', '123123123123', '123@qq.com', '2019-03-08 10:51:02', '2019-03-08 10:51:02', '/files/7c11f67e-d90a-4b31-8b24-8282366e3e76.jpg');
 
 -- ----------------------------
 -- Table structure for train_course

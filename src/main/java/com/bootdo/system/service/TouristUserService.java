@@ -1,6 +1,7 @@
 package com.bootdo.system.service;
 
 import com.bootdo.system.domain.TouristUserDO;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -27,4 +28,6 @@ public interface TouristUserService {
 	int remove(Integer id);
 	
 	int batchRemove(Integer[] ids);
+
+	TouristUserDO updatePersonalImg(MultipartFile file, String avatar_data, Integer id) throws Exception;
 }
