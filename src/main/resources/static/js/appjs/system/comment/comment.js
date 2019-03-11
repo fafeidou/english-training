@@ -61,7 +61,14 @@ function load() {
 								},
 																{
 									field : 'isShow', 
-									title : '是否显示(管理员审核)' 
+									title : '是否显示(管理员审核)' ,
+									formatter: function (value, row, index) {
+										if (value == '0') {
+											return '<span class="label label-danger">否</span>';
+										} else if (value == '1') {
+											return '<span class="label label-primary">是</span>';
+										}
+									}
 								},
 																{
 									field : 'createTime', 

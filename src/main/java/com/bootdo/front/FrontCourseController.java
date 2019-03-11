@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -93,14 +92,16 @@ public class FrontCourseController {
         modelMap.put("courseDO", courseDO);
         //查出所有的评论
         Map<String, Object> commentMap = new HashMap<>();
-        commentMap.put("course_id", courseDO.getId());
-        commentMap.put("is_show", true);
+        commentMap.put("courseId", courseDO.getId());
+        commentMap.put("isShow", 1);
         List<CommentDO> commentDOList = commentService.list(commentMap);
         if (CollectionUtils.isNotEmpty(commentDOList)) {
             commentDOList.forEach(i -> {
                 //查出用户
                 TouristUserDO touristUserDO = touristUserService.get(i.getUserId());
-                i.setUserName(Optional.of(touristUserDO.getUsername()).orElse(""));
+                if (touristUserDO != null && touristUserDO.getUsername() != null) {
+                    i.setUserName(touristUserDO.getUsername());
+                }
             });
         } else {
             commentDOList = Lists.newArrayList();

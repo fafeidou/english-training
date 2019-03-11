@@ -53,12 +53,12 @@
 </div>
 
 <!--Page Header-->
-<section class="page_header padding-top">
+<section class="page_header padding-top" >
     <div class="container">
         <div class="row">
             <div class="col-md-12 page-content">
-                <h1 th:text="${courseDO.trainCorseCateName}"></h1>
-                <p th:text="${courseDO.name}"></p>
+                <h1 th:text="${courseDO.trainCorseCateName}" style="color: #1f90d8"></h1>
+                <p th:text="${courseDO.name}" style="color: #1f90d8"></p>
                 <div class="page_nav">
                 </div>
             </div>
@@ -108,10 +108,17 @@
 
                     </div>
                 </div>
-                <h3 class="top30 bottom20">课程介绍</h3>
+                <h3 class="top30 bottom20"></h3>
                 <div class="bottom25" th:text="${courseDO.detail}">
                 </div>
-                <div class="bottom15"></div>
+                <span th:if="${session.touristUser}">
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                        添加评论
+                    </button>
+                </span>
+                <span th:if="${session.touristUser == null}">
+                        登陆后可添加评论
+                </span>
                 <div class="profile_border">
                     <div class="profile top20 bottom20" th:each="commentDO:${commentDOList}">
                         <div class="p_pic"><img src="/images/profile2.png" alt="Course"></div>
@@ -136,6 +143,35 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form class="form-horizontal m-t" id="signupForm">
+                            <input type="hidden" th:value="${courseDO.id}" name="id">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    用户评论
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <textarea cols="70" rows="5" name="commentContent"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                </button>
+                                <button type="button" class="btn btn-primary" onclick="save()">
+                                    提交评论
+                                </button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
             </div>
             <aside class="col-sm-4 wow fadeIn" data-wow-delay="400ms">
                 <div class="widget heading_space">
@@ -245,7 +281,31 @@
 <script src="/js/front/revolution.extension.video.min.js"></script>
 <script src="/js/front/wow.min.js"></script>
 <script src="/js/front/functions.js"></script>
+<script type="application/javascript">
+    function save() {
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/front/comment/save",
+            data: $('#signupForm').serialize(),// 你的formid
+            async: false,
+            error: function (request) {
+                alert("Connection error");
+            },
+            success: function (data) {
+                if (data.code == 0) {
+                    $('#myModal').modal('hide');
+                    alert("操作成功");
 
+                } else {
+                    $('#myModal').modal('hide');
+                    alert(data.msg)
+                }
+            }
+        });
+
+    }
+</script>
 </body>
 </html>
 
