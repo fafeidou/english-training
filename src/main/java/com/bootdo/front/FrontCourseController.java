@@ -36,9 +36,16 @@ public class FrontCourseController {
     @Autowired
     private TouristUserService touristUserService;
 
+    /**
+     * 体验课程
+     * @param params
+     * @param modelMap
+     * @return
+     */
     @GetMapping("/courses")
     public String courses(@RequestParam Map<String, Object> params, ModelMap modelMap) {
         //查询列表数据
+        params.put("isFree", 1);
         Query query = new Query(params);
         List<CourseDO> courseList = courseService.list(query);
         if (CollectionUtils.isNotEmpty(courseList)) {
@@ -58,6 +65,37 @@ public class FrontCourseController {
         PageUtils pageUtils = new PageUtils(courseList, total);
         modelMap.addAttribute("pageUtils", pageUtils);
         return "front/courses";
+    }
+
+    /**
+     * 不是体验课程
+     * @param params
+     * @param modelMap
+     * @return
+     */
+    @GetMapping("/notFreeCourses")
+    public String notFreeCourses(@RequestParam Map<String, Object> params, ModelMap modelMap) {
+        //查询列表数据
+        params.put("isFree", 0);
+        Query query = new Query(params);
+        List<CourseDO> courseList = courseService.list(query);
+        if (CollectionUtils.isNotEmpty(courseList)) {
+            courseList.forEach(i -> {
+                TeacherDO teacherDO = teacherService.get(i.getTeacherId());
+                if (teacherDO != null) {
+                    i.setTeacherName(teacherDO.getUsername());
+                }
+                CourseCateDO courseCateDO = courseCateService.get(i.getTrainCorseId());
+                if (courseCateDO != null) {
+                    i.setTrainCorseCateName(courseCateDO.getName());
+                }
+            });
+
+        }
+        int total = courseService.count(query);
+        PageUtils pageUtils = new PageUtils(courseList, total);
+        modelMap.addAttribute("pageUtils", pageUtils);
+        return "front/notFreeCourses";
     }
 
     @GetMapping("/courses/details")

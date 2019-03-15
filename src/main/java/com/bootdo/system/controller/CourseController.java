@@ -109,6 +109,9 @@ public class CourseController {
     @RequestMapping("/update")
     @RequiresPermissions("system:course:edit")
     public R update(CourseDO course) {
+        if (course.getIsFree() == null) {
+            course.setIsFree(false);
+        }
         course.setUpdateTime(new Date());
         courseService.update(course);
         return R.ok();

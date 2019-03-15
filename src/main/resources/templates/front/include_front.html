@@ -5,18 +5,30 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="index.html"><img th:src="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + 'images/logo-white.png'}" alt="logo"
-                                                           class="logo logo-display">
+            <a class="navbar-brand" href="index.html"><img
+                    th:src="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + 'images/logo-white.png'}"
+                    alt="logo"
+                    class="logo logo-display">
                 <img src="images/logo.png" class="logo logo-scrolled" alt="">
             </a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-menu" >
+        <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-right" data-out="fadeOut">
-                <li><a href="/front" style="color: #F00">首页</a></li>
-                <li><a href="/courses?limit=8" style="color: #F00">课程</a></li>
-                <li><a href="/teachers" style="color: #F00">中外教师资</a></li>
-                <li><a href="/about" style="color: #F00">关于我们</a></li>
-                <li><a href="/xingyouhui" style="color: #F00">星友会中心</a></li>
+                <li>
+                    <a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/front'} "
+                       style="color: #F00">首页</a></li>
+                <li>
+                    <a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/courses?limit=8'} "
+                       style="color: #F00">体验课程</a></li>
+                <li>
+                    <a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/notFreeCourses?limit=6'} "
+                       style="color: #F00">精品课程</a></li>
+                <li><a style="color: #F00"
+                       th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/about'} ">关于我们</a>
+                </li>
+                <li><a style="color: #F00"
+                       th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/xingyouhui'} ">星友会中心</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -29,19 +41,23 @@
             <div class="col-md-12">
                 <div class="pull-left">
                     <span class="info">
-                        <span th:if="${session.touristUser}" th:text="${session.touristUser.username}"><img th:src="@${session.touristUser.headUrl}" ></span>
+                        <span th:if="${session.touristUser}" th:text="${session.touristUser.username}"><img
+                                th:src="@${session.touristUser.headUrl}"></span>
                         <span th:if="${session.touristUser == null}">欢迎光临本小站</span>
                     </span>
                 </div>
                 <div class="social_top pull-right">
                     <span th:if="${session.touristUser == null}">
 
-                        <span class="info"><a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/login'} ">登录</a>
+                        <span class="info"><a
+                                th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/login'} ">登录</a>
                         </span>
                         &nbsp;
-                        <span class="info"><a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/register'} ">免费注册</a></span>
+                        <span class="info"><a
+                                th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/register'} ">免费注册</a></span>
                         &nbsp;
-                    <span class="info"><a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/login'} ">管理员登录</a></span>
+                    <span class="info"><a
+                            th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/login'} ">管理员登录</a></span>
                     </span>
                     <span th:if="${session.touristUser}">
                         <span class="info"><a href="tourist/manage" class="login" el="nofollow">个人信息管理</a></span>&nbsp;&nbsp;

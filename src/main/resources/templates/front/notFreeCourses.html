@@ -66,66 +66,15 @@
 
 <!-- Courses -->
 <section id="course_all" class="padding-bottom">
-    <div class="container">
+    <div class="container" >
         <div class="row">
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4" th:each="row:${pageUtils.rows}">
                 <div class="course margin_top wow fadeIn" data-wow-delay="400ms">
                     <div class="image bottom25">
-                        <img src="images/courses1.jpg" alt="Course" class="border_radius">
+                        <img th:src="${row.url}" alt="Course" class="border_radius">
                     </div>
-                    <h3 class="bottom10"><a href="course_detail.html">零基础</a></h3>
-                    <p class="bottom20">英语音标&nbsp;&nbsp;英语发音&nbsp;&nbsp;英语语调 &nbsp;&nbsp;英语语法</p>
-                    <a class="btn_common yellow border_radius" href="course_detail.html">view details</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="course margin_top wow fadeIn" data-wow-delay="500ms">
-                    <div class="image bottom25">
-                        <img src="images/courses2.jpg" alt="Course" class="border_radius">
-                    </div>
-                    <h3 class="bottom10"><a href="course_detail.html">少儿英语</a></h3>
-                    <p class="bottom20">英语儿歌&nbsp;&nbsp;趣味英语&nbsp;&nbsp;英语故事&nbsp;&nbsp;剑桥英语</p>
-                    <a class="btn_common yellow border_radius" href="course_detail.html">view details</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="course margin_top wow fadeIn" data-wow-delay="600ms">
-                    <div class="image bottom25">
-                        <img src="images/courses3.jpg" alt="Course" class="border_radius">
-                    </div>
-                    <h3 class="bottom10"><a href="course_detail.html">高中英语</a></h3>
-                    <p class="bottom20">高中英语单词&nbsp;&nbsp;高中英语语法&nbsp;&nbsp;高中英语作文&nbsp;&nbsp;历年高考真题</p>
-                    <a class="btn_common yellow border_radius" href="#.">view details</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="course margin_top  wow fadeIn" data-wow-delay="700ms">
-                    <div class="image bottom25">
-                        <img src="images/courses4.jpg" alt="Course" class="border_radius">
-                    </div>
-                    <h3 class="bottom10"><a href="course_detail.html">大学英语</a></h3>
-                    <p class="bottom20">英语阅读&nbsp;&nbsp;大学英语写作&nbsp;&nbsp;大学英语语法&nbsp;&nbsp;大学英语听力</p>
-                    <a class="btn_common yellow border_radius" href="course_detail.html">view details</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="course margin_top wow fadeIn" data-wow-delay="800ms">
-                    <div class="image bottom25">
-                        <img src="images/courses5.jpg" alt="Course" class="border_radius">
-                    </div>
-                    <h3 class="bottom10"><a href="course_detail.html">商务英语</a></h3>
-                    <p class="bottom20">日常英语&nbsp;&nbsp;旅游英语&nbsp;&nbsp;职场英语&nbsp;&nbsp;外贸英语</p>
-                    <a class="btn_common yellow border_radius" href="course_detail.html">view details</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="course margin_top wow fadeIn" data-wow-delay="900ms">
-                    <div class="image bottom25">
-                        <img src="images/courses6.jpg" alt="Course" class="border_radius">
-                    </div>
-                    <h3 class="bottom10"> <a href="course_detail.html">英语四六级</a></h3>
-                    <p class="bottom20">历年真题&nbsp;&nbsp;冲刺课程&nbsp;&nbsp;备考经验</p>
-                    <a class="btn_common yellow border_radius" href="course_detail.html">view details</a>
+                    <h3 class="bottom10"><a href="#" th:text="${row.name}"></a></h3>
+                    <p class="bottom20">价格&nbsp;&nbsp;<span th:text="${row.price}"/>&nbsp;&nbsp;会员价格&nbsp;&nbsp;<span th:text="${row.vipPrice}"/></p>
                 </div>
             </div>
         </div>
@@ -150,7 +99,7 @@
                 <ul class="links">
                     <li><a href="index.html"><i class="icon-chevron-small-right"></i>首页</a></li>
                     <li><a href="courses.html"><i class="icon-chevron-small-right"></i>课程</a></li>
-                    <li><a href="teachers.html"><i class="icon-chevron-small-right"></i>中外教师资</a></li>
+                    <li><a href="notFreeCourses.html"><i class="icon-chevron-small-right"></i>中外教师资</a></li>
                     <li><a href="about.html"><i class="icon-chevron-small-right"></i>关于我们</a></li>
 
                     <li><a href="xingyouhui.html"><i class="icon-chevron-small-right"></i>星友会中心</a></li>

@@ -3,15 +3,10 @@ $().ready(function() {
 		height:'220px',
 		lang : 'zh-CN'
 	});
-	validateRule();
 });
 
-$.validator.setDefaults({
-	submitHandler : function() {
-		save();
-	}
-});
 function save() {
+	alert();
 	var content_sn = $("#content_sn").code();
 	$("#detail").val(content_sn);
 	$.ajax({
@@ -37,19 +32,4 @@ function save() {
 		}
 	});
 
-}
-function validateRule() {
-	var icon = "<i class='fa fa-times-circle'></i> ";
-	$("#signupForm").validate({
-		rules : {
-			name : {
-				required : true
-			}
-		},
-		messages : {
-			name : {
-				required : icon + "请输入姓名"
-			}
-		}
-	})
 }

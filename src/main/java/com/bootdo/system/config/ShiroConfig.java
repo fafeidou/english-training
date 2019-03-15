@@ -92,6 +92,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/tourist/**", "anon");
         filterChainDefinitionMap.put("/tourist/manage", "anon");
         filterChainDefinitionMap.put("/tourist/personal/**", "anon");
+        filterChainDefinitionMap.put("/notFreeCourses/**", "anon");
         filterChainDefinitionMap.put("/xingyouhui", "anon");
         filterChainDefinitionMap.put("/blog/open/**", "anon");
         filterChainDefinitionMap.put("/**", "authc");

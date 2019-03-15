@@ -28,11 +28,6 @@ public class IndexController {
         return "front/index";
     }
 
-    @GetMapping("/teachers")
-    public String teachers() {
-        return "front/teachers";
-    }
-
     @GetMapping("/about")
     public String about() {
         return "front/about";
