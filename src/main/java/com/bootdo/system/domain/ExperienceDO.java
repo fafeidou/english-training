@@ -26,6 +26,36 @@ public class ExperienceDO implements Serializable {
 	//
 	private Date updateTime;
 
+	private String courseName;
+
+	private String courseCateName;
+
+	private String teacherName;
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public String getCourseCateName() {
+		return courseCateName;
+	}
+
+	public void setCourseCateName(String courseCateName) {
+		this.courseCateName = courseCateName;
+	}
+
+	public String getTeacherName() {
+		return teacherName;
+	}
+
+	public void setTeacherName(String teacherName) {
+		this.teacherName = teacherName;
+	}
+
 	/**
 	 * 设置：
 	 */
