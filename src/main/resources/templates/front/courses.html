@@ -71,7 +71,7 @@
                  th:each="row:${pageUtils.rows}">
                 <div class="shopping_box">
                     <div class="image">
-                        <img th:src="${row.url}" alt="Edua" class="img-responsive border-radius">
+                        <img th:src="${row.url}" alt="Edua" class="img-responsive border-radius" style="height: 300px;width: 500px;">
                         <div class="overlay border_radius">
                             <a class="btn_common yellow border_radius btn-cart"
                                th:href="@{'/courses/details?courseId='+${row.id}}">detail</a>

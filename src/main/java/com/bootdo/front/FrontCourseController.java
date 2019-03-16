@@ -38,6 +38,7 @@ public class FrontCourseController {
 
     /**
      * 体验课程
+     *
      * @param params
      * @param modelMap
      * @return
@@ -45,8 +46,8 @@ public class FrontCourseController {
     @GetMapping("/courses")
     public String courses(@RequestParam Map<String, Object> params, ModelMap modelMap) {
         //查询列表数据
-        params.put("isFree", 1);
         Query query = new Query(params);
+        query.put("isFree", "1");
         List<CourseDO> courseList = courseService.list(query);
         if (CollectionUtils.isNotEmpty(courseList)) {
             courseList.forEach(i -> {
@@ -69,6 +70,7 @@ public class FrontCourseController {
 
     /**
      * 不是体验课程
+     *
      * @param params
      * @param modelMap
      * @return
@@ -76,8 +78,8 @@ public class FrontCourseController {
     @GetMapping("/notFreeCourses")
     public String notFreeCourses(@RequestParam Map<String, Object> params, ModelMap modelMap) {
         //查询列表数据
-        params.put("isFree", 0);
         Query query = new Query(params);
+        query.put("isFree", "0");
         List<CourseDO> courseList = courseService.list(query);
         if (CollectionUtils.isNotEmpty(courseList)) {
             courseList.forEach(i -> {
@@ -96,6 +98,22 @@ public class FrontCourseController {
         PageUtils pageUtils = new PageUtils(courseList, total);
         modelMap.addAttribute("pageUtils", pageUtils);
         return "front/notFreeCourses";
+    }
+
+    @GetMapping("/notFreeCourses/details")
+    public String notFreeCoursesDetails(@RequestParam Map<String, Object> params, ModelMap modelMap) {
+        Object courseId = params.get("courseId");
+        CourseDO courseDO = courseService.get(Integer.parseInt(courseId.toString()));
+        TeacherDO teacherDO = teacherService.get(courseDO.getTeacherId());
+        if (teacherDO != null) {
+            courseDO.setTeacherName(teacherDO.getUsername());
+        }
+        CourseCateDO courseCateDO = courseCateService.get(courseDO.getTrainCorseId());
+        if (courseCateDO != null) {
+            courseDO.setTrainCorseCateName(courseCateDO.getName());
+        }
+        modelMap.put("courseDO", courseDO);
+        return "front/not_free_course_detail";
     }
 
     @GetMapping("/courses/details")

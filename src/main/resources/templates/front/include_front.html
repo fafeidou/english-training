@@ -60,8 +60,8 @@
                             th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/login'} ">管理员登录</a></span>
                     </span>
                     <span th:if="${session.touristUser}">
-                        <span class="info"><a href="tourist/manage" class="login" el="nofollow">个人信息管理</a></span>&nbsp;&nbsp;
-                         <span class="info"><a href="tourist/loginOut" class="login" el="nofollow">登出</a></span>
+                        <span class="info"><a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/manage'} "  class="login" el="nofollow">个人信息管理</a></span>&nbsp;&nbsp;
+                         <span class="info"><a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/loginOut'} " class="login" el="nofollow">登出</a></span>
                     </span>
                 </div>
             </div>
