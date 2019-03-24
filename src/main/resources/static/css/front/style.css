@@ -175,6 +175,7 @@ body,html{
 	width:100%;
 	font-size:99%;
 	position: relative;
+	background-color: #1f90d8;
 }
 /*Share Common Font Family*/
 #rev_slider h1, #rev_slider_full h1, #rev_slider_video h1, #text_rotator h1, h3, .page_header .page-content h1, .aboutus h4, .events h4, .items > li > a, #error .error h1, 
