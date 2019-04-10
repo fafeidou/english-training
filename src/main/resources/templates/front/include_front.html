@@ -1,6 +1,5 @@
 <nav th:fragment="nav">
     <div class="container">
-
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
@@ -43,12 +42,11 @@
                     <span class="info">
                         <span th:if="${session.touristUser}" th:text="${session.touristUser.username}"><img
                                 th:src="@${session.touristUser.headUrl}"></span>
-                        <span th:if="${session.touristUser == null}">欢迎光临本小站</span>
+                        <span th:if="${session.touristUser == null}">欢迎光临小小项外语培训网站</span>
                     </span>
                 </div>
                 <div class="social_top pull-right">
                     <span th:if="${session.touristUser == null}">
-
                         <span class="info"><a
                                 th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/tourist/login'} ">登录</a>
                         </span>

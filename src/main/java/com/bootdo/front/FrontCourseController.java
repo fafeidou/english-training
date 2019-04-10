@@ -92,7 +92,6 @@ public class FrontCourseController {
                     i.setTrainCorseCateName(courseCateDO.getName());
                 }
             });
-
         }
         int total = courseService.count(query);
         PageUtils pageUtils = new PageUtils(courseList, total);

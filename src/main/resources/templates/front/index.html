@@ -48,7 +48,6 @@
     <nav th:include="front/include_front::nav"  class="navbar navbar-default navbar-fixed white no-background bootsnav" ></nav>
 </header>
 
-
 <!--Slider-->
 <section class="rev_slider_wrapper text-center">
     <!-- START REVOLUTION SLIDER 5.0 auto mode -->
@@ -57,14 +56,6 @@
             <li data-transition="fade" th:each="navigation:${navigations}">
                 <img th:src="${navigation.imgUrl}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
             </li>
-            <!-- SLIDE  -->
-           <!-- <li data-transition="fade">
-                <img src="/images/banner1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
-            </li>
-
-            <li data-transition="fade">
-                <img src="/images/banner2.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg">
-            </li>-->
         </ul>
     </div><!-- END REVOLUTION SLIDER -->
 </section>
@@ -236,15 +227,15 @@
         <div class="row">
             <div class="col-md-4 col-sm-4 footer_panel bottom25">
                 <h3 class="heading bottom25">关于我们<span class="divider-left"></span></h3>
-                <a href="index.html" class="footer_logo bottom25"><img src="/images/logo-white.png" alt="Edua"></a>
-                <p>走向世界，从星星外语开始。</p>
+                <a href="index.html" class="footer_logo bottom25"><img src="images/logo-white.png" alt="Edua"></a>
+                <p>走向世界，从小小项外语开始。</p>
             </div>
             <div class="col-md-4 col-sm-4 footer_panel bottom25">
                 <h3 class="heading bottom25">快速链接<span class="divider-left"></span></h3>
                 <ul class="links">
                     <li><a href="index.html"><i class="icon-chevron-small-right"></i>首页</a></li>
-                    <li><a href="courses.html"><i class="icon-chevron-small-right"></i>课程</a></li>
-                    <li><a href="notFreeCourses.html"><i class="icon-chevron-small-right"></i>中外教师资</a></li>
+                    <li><a href="courses.html"><i class="icon-chevron-small-right"></i>体验课程</a></li>
+                    <li><a href="notFreeCourses.html"><i class="icon-chevron-small-right"></i>精品课程</a></li>
                     <li><a href="about.html"><i class="icon-chevron-small-right"></i>关于我们</a></li>
                     <li><a href="xingyouhui.html"><i class="icon-chevron-small-right"></i>星友会中心</a></li>
                 </ul>
@@ -254,13 +245,13 @@
                 <p class=" address"><i class="icon-map-pin"></i>198 West 21th Street Victoria 8007, Australia</p>
                 <p class=" address"><i class="icon-phone"></i>(654) 332-112-222</p>
                 <p class=" address"><i class="icon-mail"></i><a href="mailto:Edua@info.com">Edua@info.com</a></p>
-                <img src="/images/footer-map.png" alt="we are here" class="img-responsive">
+                <img src="images/footer-map.png" alt="we are here" class="img-responsive">
             </div>
         </div>
     </div>
 </footer>
-
 <!--FOOTER ends-->
+
 <!--加载整个页面内容-->
 <script src="/js/front/jquery-2.2.3.js"></script>
 <script src="/js/front/bootstrap.min.js"></script>
